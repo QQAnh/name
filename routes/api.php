@@ -22,54 +22,38 @@ Route::group(['middleware'=>'auth:api'],function (){
 });
 
 
-Route::get('/books', function(Request $request){
-    $entries = [
-        [
-            "isbn" => "9781593275846",
-            "title" => "Eloquent JavaScript, Second Edition",
-            "author" => "Marijn Haverbeke"
-        ],
-        [
-            "isbn" => "9781449331818",
-            "title" => "Learning JavaScript Design Patterns",
-            "author" => "Addy Osmani"
-        ],
-        [
-            "isbn" => "9781449365035",
-            "title" => "Speaking JavaScript",
-            "author" => "Axel Rauschmayer",
-        ],
-        [
-            "isbn" => "9781491950296",
-            "title" => "Programming JavaScript Applications",
-            "author" => "Eric Elliott"
-        ]
-    ];
-    return response()->json($entries, 200);
-});
 
-Route::get('/books', function(Request $request){
+
+Route::get('/user', function(Request $request){
     $entries = [
         [
-            "isbn" => "9781593275846",
-            "title" => "Eloquent JavaScript, Second Edition",
-            "author" => "Marijn Haverbeke"
+            'Fullname' => 'Hoàng Quỳnh Anh',
+            'Date_of_Birth' => '01/07/1999',
+            'Email'=>'hoangquynhanh@gmail.com',
+            'Phone'=>'012321313',
+            'Address'=>'Hà nội ',
+
+        ],[
+            'Fullname' => 'Nguyễn Văn Lộc ',
+            'Date_of_Birth' => '02/07/1999',
+            'Email'=>'nguyenvanloc@gmail.com',
+            'Phone'=>'1231311313',
+            'Address'=>'Ninh Bình',
+
+        ],[
+            'Fullname' => 'Trần Bình Minh',
+            'Date_of_Birth' => '03/04/1995',
+            'Email'=>'tranbinhminh@gmail.com',
+            'Phone'=>'0123123123',
+            'Address'=>'Nghệ An',
+
+        ],[
+            'Fullname' => 'Vũ Trần Hoàng',
+            'Date_of_Birth' => '11/12/1992',
+            'Email'=>'vutranhoang@gmail.com',
+            'Phone'=>'123123132',
+            'Address'=>'Hà Tĩnh',
         ],
-        [
-            "isbn" => "9781449331818",
-            "title" => "Learning JavaScript Design Patterns",
-            "author" => "Addy Osmani"
-        ],
-        [
-            "isbn" => "9781449365035",
-            "title" => "Speaking JavaScript",
-            "author" => "Axel Rauschmayer",
-        ],
-        [
-            "isbn" => "9781491950296",
-            "title" => "Programming JavaScript Applications",
-            "author" => "Eric Elliott"
-        ]
     ];
     return response()->json($entries, 200);
 });
