@@ -5,65 +5,34 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Login</div>
-                    <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/logintest') }}">
-                            {{ csrf_field() }}
-
-                            <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                                <label for="phone" class="col-md-4 control-label">Phone</label>
-
-                                <div class="col-md-6">
-                                    <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}" required autofocus>
-
-                                    @if ($errors->has('phone'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('phone') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label for="password" class="col-md-4 control-label">Password</label>
-
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control" name="password" required>
-
-                                    @if ($errors->has('password'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : ''}}> Remember Me
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-md-8 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Login
-                                    </button>
-
-                                    <a class="btn btn-link" href="{{ url('/password/reset') }}">
-                                        Forgot Your Password?
-                                    </a>
-                                </div>
-                            </div>
-                        </form>
+            <div class="col-md-6 col-md-offset-3">
+                <form action="{{url('login')}}" method="POST" role="form">
+                    <legend>Login</legend>
+                    @if($errors->has('errorlogin'))
+                        <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            {{$errors->first('errorlogin')}}
+                        </div>
+                    @endif
+                    <div class="form-group">
+                        <label for="">Phone</label>
+                        <input type="number" class="form-control" id="phone" placeholder="phone" name="phone" value="{{old('phone')}}">
+                        @if($errors->has('phone'))
+                            <p style="color:red">{{$errors->first('phone')}}</p>
+                        @endif
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                        @if($errors->has('password'))
+                            <p style="color:red">{{$errors->first('password')}}</p>
+                        @endif
+                    </div>
+
+
+                    {!! csrf_field() !!}
+                    <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                </form>
             </div>
         </div>
     </div>

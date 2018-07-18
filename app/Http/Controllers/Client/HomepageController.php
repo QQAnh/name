@@ -29,10 +29,17 @@ class HomepageController extends Controller
 
     }
 
-    public function getLogin()
-    {
-        return view('client.listClient.login');
+//    public function getLogin()
+//    {
+//        return view('client.listClient.login');
+//
+//    }
+    public function __construct() {
+        $this->middleware('auth');
+    }
 
+    public function getIndex() {
+        return 'Đăng nhập thành công!';
     }
 
     public function getListSmartPhone(){
