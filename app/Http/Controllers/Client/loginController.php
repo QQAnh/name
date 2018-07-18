@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Client;
 
 use App\Accounts;
+use Auth;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 

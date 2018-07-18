@@ -35,6 +35,10 @@ class HomepageController extends Controller
 //
 //    }
 
+    public function getIndex() {
+        return 'Đăng nhập thành công!';
+    }
+
     public function getListSmartPhone(){
         $category = Category::all();
         $product = Product::where('category',1)->get();
