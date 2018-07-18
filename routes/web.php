@@ -19,7 +19,9 @@ Auth::routes();
 
 Route::get('/homepage','Client\HomepageController@index');
 Route::get('/test/{id}','Client\HomepageController@test');
-Route::get('/register','Client\HomepageController@register');
+
+Route::route('/register','Client\RegisterController');
+
 Route::get('/login','Client\loginController@getLogin');
 
 
