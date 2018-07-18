@@ -43,7 +43,32 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $validator = Validator::make($request->all(), [
+                'title' => 'required|unique:products|max:50',
+                'category' => 'required',
+                'description' => 'required',
+                'thumbnail' => 'required',
+                'price' => 'required'
+            ]);
+            if ($validator->fails()) {
+                return response()->json($validator->errors(), 400);
+
+            }
+            $productJson = $request->json()->all();
+            $product = new Product();
+            $product->title = $productJson['title'];
+            $product->category = $productJson['category'];
+            $product->description = $productJson['description'];
+            $product->thumbnail = $productJson['thumbnail'];
+            $product->price = $productJson['price'];
+            $product->created_at = $productJson['created_at'];
+            $product->updated_at = $productJson['updated_at'];
+            $product->save();
+            return response()->json($productJson, 201);
+        } catch (EXCEPTION $exception) {
+            return response()->json($exception->errors(), 500);
+        }
     }
 
     /**
