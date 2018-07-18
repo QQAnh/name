@@ -21,7 +21,7 @@ Route::get('/homepage','Client\HomepageController@index');
 Route::get('/test/{id}','Client\HomepageController@test');
 Route::get('/register','Client\HomepageController@register');
 Route::get('/login','Client\HomepageController@getLogin');
-Route::post('/logintest','TestController@check');
+Route::post('/logintest','Client\testController@check');
 
 
 
