@@ -15,7 +15,8 @@ class AccountsController extends Controller
      */
     public function index()
     {
-
+        $account = Accounts::all();
+        return response()->json($account, 201);
     }
 
     /**
@@ -63,7 +64,9 @@ class AccountsController extends Controller
      */
     public function show($id)
     {
-        //
+        $account = Accounts::find($id);
+        return response()->json($account, 201);
+
     }
 
     /**
