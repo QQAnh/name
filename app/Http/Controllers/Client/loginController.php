@@ -33,11 +33,11 @@ class loginController extends Controller
 
         $phone = $request->input('phone');
 //        $password = $request->input('password');
-        $password2 = DB::table('accounts')->where('phone', $phone)
-            ->value('password')
-            ->get();
+//        $password2 = DB::table('accounts')->where('phone', $phone)
+//            ->value('password')
+//            ->get();
 
-        return $password2;
+        return $phone;
 
 
     }
