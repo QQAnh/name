@@ -25,8 +25,8 @@ Route::resource('/register','Client\RegisterController');
 //Route::get('/login','Client\loginController@getLogin');
 Route::get('','Client\HomepageController@getIndex');
 
-Route::get('/login','Client\loginController@getLogin');
-Route::post('/login','Client\loginController@getPhone');
+//Route::get('/login','Client\loginController@getLogin');
+//Route::post('/login','Client\loginController@getPhone');
 
 //Route::get('get-form',['uses'=> 'Client\loginController@getLogin']);
 //Route::post('handle-form',['uses'=> 'Client\loginController@handleRequest']);
