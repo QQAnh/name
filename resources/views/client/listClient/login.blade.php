@@ -24,7 +24,9 @@
     {{--</div>--}}
     <form action="{{ url('handle-form') }}" method="POST" role="form">
         <legend>Test submit form</legend>
-        {{ csrf_field()}}
+        {{--{{ csrf_field()}}--}}
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
         <div class="form-group">
             <label for="">label</label>
             <input type="text" name="name" class="form-control" id="" placeholder="Input field">
