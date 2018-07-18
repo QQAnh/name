@@ -29,7 +29,11 @@ class HomepageController extends Controller
 
     }
 
+    public function getLogin()
+    {
+        return view('client.listClient.login');
 
+    }
 
     public function getListSmartPhone(){
         $category = Category::all();

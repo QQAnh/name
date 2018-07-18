@@ -14,11 +14,7 @@ class loginController extends Controller
     public function password(){
         return 'password';
     }
-    public function getLogin()
-    {
-        return view('client.listClient.login');
 
-    }
 
     public function postLogin(Request $request)
     {
