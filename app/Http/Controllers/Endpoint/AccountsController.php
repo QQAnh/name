@@ -25,12 +25,9 @@ class AccountsController extends Controller
      */
     public function create()
     {
-        return view('admin.listA')->with([
-            "product"=> new Accounts(),
-            "action"=>"/register",
-            "method"=>"POST"
-        ]) ;
+
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -39,7 +36,6 @@ class AccountsController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $accountJson = $request->json()->all();
         try {
             $account = new Accounts();
@@ -55,8 +51,7 @@ class AccountsController extends Controller
             return response()->json($accountJson, 201);
         } catch (EXCEPTION $exception) {
             return response()->json($exception->errors(), 400);
-        }
-    }
+        }    }
 
     /**
      * Display the specified resource.
@@ -70,7 +65,6 @@ class AccountsController extends Controller
         $account = Accounts::where('phone', 'like', $phone)->get();
         return response()->json($account,200);
     }
-
 
     /**
      * Show the form for editing the specified resource.
