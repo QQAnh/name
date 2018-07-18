@@ -15,7 +15,7 @@ class AccountsController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -99,7 +99,7 @@ class AccountsController extends Controller
     {
         //
     }
-    public function getByPhone(Request $request){
-        $account = Accounts::where('phone',$request->input('phone'))->get();
-    }
+    public function getByPhone(Request $phone){
+        $account = Accounts::where('phone', 'like', $phone)->get();
+        return response()->json($account,200);    }
 }
