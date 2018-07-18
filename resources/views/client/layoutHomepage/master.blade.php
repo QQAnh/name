@@ -424,7 +424,7 @@
                 <a class="nav-link" href="/login"><i  class="fa fa-sign-in"> </i> Đăng nhập </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/register"> <i class="fa fa-key"></i> Đăng kí</a>
+                <a class="nav-link" href="/register/create"> <i class="fa fa-key"></i> Đăng kí</a>
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
