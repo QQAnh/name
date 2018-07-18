@@ -1,5 +1,5 @@
 @extends('client.layoutHomepage.master')
-@section('title', 'Dashboard Admin')
+@section('title', 'Laptop')
 
 @section('content')
     <div class="row">

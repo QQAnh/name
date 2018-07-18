@@ -1,5 +1,5 @@
 @extends('client.layoutHomepage.master')
-@section('title', '')
+@section('title', 'Console')
 
 @section('content')
     <div class="row">

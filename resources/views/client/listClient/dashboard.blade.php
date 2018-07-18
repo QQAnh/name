@@ -1,5 +1,5 @@
 @extends('client.layoutHomepage.master')
-@section('title', 'Dashboard Admin')
+@section('title', 'Chi tiết sản phẩm ')
 <style>
     .gallery-wrap .img-big-wrap img {
         height: 450px;
