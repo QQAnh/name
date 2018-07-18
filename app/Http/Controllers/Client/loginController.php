@@ -33,9 +33,10 @@ class loginController extends Controller
 
         $phone = $request->input('phone');
         $password = $request->input('password');
-        $account = Accounts::where('phone', $phone)->get();
-                 return response()->json($account, 201);
-;
+        $account = Accounts::where('phone', $phone)
+            ->value('password')
+            ->get();
+        return $account;
     }
 
 
