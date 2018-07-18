@@ -36,7 +36,7 @@ class HomepageController extends Controller
 //    }
 
     public function getIndex() {
-        return 'Đăng nhập thành công!';
+        return 'Đăng nhập thành công!!!';
     }
 
     public function getListSmartPhone(){
