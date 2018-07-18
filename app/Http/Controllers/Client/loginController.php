@@ -30,8 +30,10 @@ class loginController extends Controller
 //            return "success";
 //        }
 //        return $request->input('phone');
-        return $request->input('phone','password');
 
+        $phone = $request->input('phone');
+        $password = $request->input('password');
+        return $phone && $password;
 
     }
 
