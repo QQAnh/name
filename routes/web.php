@@ -17,4 +17,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/homepage','Client\HomepageController@index');
+Route::get('/test/{id}','Client\HomepageController@test');
+Route::get('/register','Client\HomepageController@register');
+Route::get('/login','Client\HomepageController@getLogin');
+
+
+Route::get('/smartphone','Client\HomepageController@getListSmartPhone');
+Route::get('/laptop','Client\HomepageController@getListLaptop');
+Route::get('/pc','Client\HomepageController@getListPC');
+Route::get('/console','Client\HomepageController@getListConsole');
+
+
+Route::get('/intro','Client\HomepageController@index3');
+Route::get('/contact','Client\HomepageController@index4');

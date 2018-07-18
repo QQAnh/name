@@ -22,4 +22,12 @@ Route::group(['middleware' => 'auth:api'], function () {
 });
 
 
+Route::post('/account','TestController@store');
 
+Route::get('/account/{phone}','TestController@show');
+
+Route::resource('/product','ProductAPIController');
+
+Route::resource('/order','OrderApiController');
+
+Route::resource('/orderDetail','OrderDetailController');
