@@ -1,0 +1,64 @@
+#header nav{
+    padding: .5rem .5rem;
+}
+.font-search input{
+    font-size: 14px;
+    padding: .2rem .75rem;
+    border-radius: 5px 0px 0px 5px;
+}
+.font-search span button{
+    font-size: 14px;
+    padding: .2rem .75rem;
+    border-radius: 0px 5px 5px 0px;
+}
+.list-menu-item-l li:hover{
+    background: #eee;
+}
+.menu-item-left{
+    font-size: 14px;
+}
+.menu-item-left ul li.active{
+    background: #eeeeee;
+}
+.input-group .icon-check{
+    color: forestgreen;
+    border: none;
+    font-size: 18px;
+    background: none;
+}
+
+.fullname-group, .phone-group, .password-group, .email-group{
+    position: relative;
+}
+.fullname-icon-err,.phone-icon-err,.email-icon-err,.password-icon-err{
+    display: inline-block;
+    position: absolute;
+    right: 25px;
+    bottom: 2px;
+    font-size: 18px;
+    color: #2ecc10;
+}
+.email-icon-err, .password-icon-err{
+
+}
+
+@media screen and (min-width: 768px){
+
+}
+
+@media screen and (min-width: 992px){
+    #navbarTogglerDemo01{
+        display: none;
+        visibility: hidden;
+    }
+    #drop-menu{
+        right: 0;
+        left: auto;
+    }
+}
+@media screen and (max-width: 991px){
+    .menu-item-left{
+        display: none;
+        visibility: hidden;
+    }
+}
