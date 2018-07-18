@@ -36,15 +36,17 @@ class loginController extends Controller
         $password = $request->input('password');
 
         $account = Account::where('phone',$phone)->get();
-        if ($phone == '12345' && $password =='Admin'){
-            return view('admin/listAdmin/dashboard');
-
-        }else{
-            return 'flase';
-        }
+//        if ($phone == '12345' && $password =='Admin'){
+//            return view('admin/listAdmin/dashboard');
+//
+//        }else{
+//            return 'flase';
+//        }
 //        $account = Account::where('phone',$phone)->value('password');
+        $account = DB::table('account')->where('phone',$phone)->get();
 
-        return ;
+               return response()->json($account, 200);
+;
 
 
 
