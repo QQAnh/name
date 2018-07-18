@@ -29,7 +29,9 @@ Route::get('/listItem','Client\HomepageController@listItem');
 
 Route::get('/login','Client\loginController@getLogin');
 Route::post('/login','Client\loginController@getPhone');
-Route::get('/admin', 'Admin\AdminController@index');
+Route::get('/admin', function (){
+    return view('admin.listAdmin.dashboard');
+});
 Route::resource('/order','OrderController');
 
 
