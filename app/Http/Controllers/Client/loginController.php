@@ -43,7 +43,7 @@ class loginController extends Controller
 //            return 'flase';
 //        }
 //        $account = Account::where('phone',$phone)->value('password');
-        $account = DB::table('account')->where('phone',$phone)->get();
+        $account = DB::table('accounts')->where('phone',$phone)->get();
 
                return response()->json($account, 200);
 ;
