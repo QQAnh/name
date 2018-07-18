@@ -28,6 +28,7 @@ Route::get('/account/{phone}','TestController@show');
 
 Route::resource('/product','Endpoint\ProductsController');
 Route::resource('/category','Endpoint\CategoriesController');
+Route::get('/product/category/{id}','Endpoint\ProductsController@getByCategory');
 
 
 

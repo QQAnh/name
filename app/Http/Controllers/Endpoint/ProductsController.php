@@ -19,6 +19,12 @@ class ProductsController extends Controller
         return response()->json($entries, 200);
     }
 
+    public function getByCategory($id)
+    {
+        $product = Product::where('category', $id)->get();
+        return response()->json($product, 200);
+
+    }
     /**
      * Show the form for creating a new resource.
      *
