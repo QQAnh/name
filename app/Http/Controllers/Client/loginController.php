@@ -14,21 +14,28 @@ class loginController extends Controller
         return view('client.listClient.login');
 
     }
-    public function getPhone(Request $request){
+
+    public function getPhone(Request $request)
+    {
 
 
-            $phone = $request->input('phone');
-            $password = $request->input('password');
+        $phone = $request->input('phone');
+        $password = $request->input('password');
+        $account = Accounts::where('phone', $phone)->where('password',$password)->get();
+        if ($account == null) {
+            return "tai khoan ko ton tai";
 
-            if( Auth::attempt(['email' => $phone, 'password' =>$password])) {
-                return redirect()->intended('/');
-            } else {
-                $errors = new MessageBag(['errorlogin' => 'Số điện thoại hoặc mật khẩu không đúng']);
-                return redirect()->back()->withInput()->withErrors($errors);
-            }
+
+        } else {
+            return "success";
+        }
         }
 
-    public function handleRequest(Request $request){
+
+
+
+    public function handleRequest(Request $request)
+    {
         return $request->input('name');
     }
 
