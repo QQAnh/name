@@ -28,8 +28,8 @@ class loginController extends Controller
             }
         }
 
-//    public function handleRequest(Request $request){
-//        return $request->input('name');
-//    }
+    public function handleRequest(Request $request){
+        return $request->input('name');
+    }
 
 }
