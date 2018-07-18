@@ -33,11 +33,14 @@ class loginController extends Controller
 //        return $request->input('phone');
 
         $phone = $request->input('phone');
-//        $password = $request->input('password');
+        $password = $request->input('password');
+        if ($phone =='1234'&& $password =='admin'){
+            return 'succes';
 
-        $account =Account::where('phone',$phone)->get();
+        }else{
+            return 'flase';
+        }
 
-        return $account->password;
 
 
     }
