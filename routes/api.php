@@ -26,7 +26,7 @@ Route::post('/account','TestController@store');
 
 Route::get('/account/{phone}','TestController@show');
 
-Route::resource('/product','ProductAPIController');
+Route::resource('/product','Endpoint\ProductsController');
 
 Route::resource('/order','OrderApiController');
 
