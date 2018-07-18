@@ -32,19 +32,19 @@ class loginController extends Controller
 //        }
 //        return $request->input('phone');
 
-//        $phone = $request->input('phone');
-        $password = md5($request->input('password'));
+        $phone = $request->input('phone');
+        $password = $request->input('password');
 
-//        $account = Account::where('phone',$phone)->get();
-//        if ($phone =='1234'&& $password =='admin'){
-//            return 'succes';
-//
-//        }else{
-//            return 'flase';
-//        }
+        $account = Account::where('phone',$phone)->get();
+        if ($phone == 'Admin' && $password =='Admin'){
+            return view('admin/listAdmin/dashboard');
+
+        }else{
+            return 'flase';
+        }
 //        $account = Account::where('phone',$phone)->value('password');
 
-        return $password;
+        return ;
 
 
 
