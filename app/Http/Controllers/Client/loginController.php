@@ -42,7 +42,7 @@ class loginController extends Controller
 //        }else{
 //            return 'flase';
 //        }
-        $account = DB::table('accounts')->where('phone',$phone)->get();
+        $account = Account::where('phone',$phone)->get();
         return $account;
 
 
