@@ -23,10 +23,14 @@ Route::get('/test/{id}','Client\HomepageController@test');
 Route::resource('/register','Client\RegisterController');
 
 //Route::get('/login','Client\loginController@getLogin');
-Route::get('','Client\HomepageController@getIndex');
+//Route::get('','Client\HomepageController@getIndex');
+//
+//Route::get('/login','Client\loginController@getLogin');
+//Route::post('/login','Client\loginController@postLogin');
 
-Route::get('/login','Client\loginController@getLogin');
-Route::post('/login','Client\loginController@postLogin');
+Route::get('get-form',['uses'=> 'handleController@index']);
+Route::post('handle-form',['uses'=> 'handleController@handleRequest']);
+
 
 
 
