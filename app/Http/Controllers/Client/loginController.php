@@ -30,12 +30,15 @@ class loginController extends Controller
 //            return "success";
 //        }
 //        return $request->input('phone');
+//
+//        $phone = $request->input('phone');
+////        $password = $request->input('password');
+//        $password2 = DB::table('accounts')->where('phone', $phone)
+//            ->value('password')
+//            ->get()
+//;
 
-        $phone = $request->input('phone');
-//        $password = $request->input('password');
-        $password2 = DB::table('accounts')->where('phone', $phone)
-            ->value('password')
-            ->get();
+        echo "success";
     }
 
 
