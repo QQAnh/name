@@ -28,8 +28,8 @@ Route::resource('/register','Client\RegisterController');
 //Route::get('/login','Client\loginController@getLogin');
 //Route::post('/login','Client\loginController@postLogin');
 
-Route::get('get-form',['uses'=> 'handleController@index']);
-Route::post('handle-form',['uses'=> 'handleController@handleRequest']);
+Route::get('get-form',['uses'=> 'Client\loginController@getLogin']);
+Route::post('handle-form',['uses'=> 'Client\loginController@handleRequest']);
 
 
 
