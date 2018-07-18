@@ -29,8 +29,8 @@ class loginController extends Controller
 //        } else {
 //            return "success";
 //        }
-        return $request->input('phone');
-        return $request->input('password');
+//        return $request->input('phone');
+        return $request->input('phone','password');
 
 
     }
