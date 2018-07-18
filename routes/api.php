@@ -22,9 +22,9 @@ Route::group(['middleware' => 'auth:api'], function () {
 });
 
 
-Route::resource('/account','Endpoint\AccountsController');
+Route::post('/account','Endpoint\AccountsController@store');
 
-Route::get('/account/{phone}','Endpoint\AccountsController@getByPhone');
+//Route::get('/account/{phone}','Endpoint\AccountsController@getByPhone');
 
 Route::resource('/product','Endpoint\ProductsController');
 Route::resource('/category','Endpoint\CategoriesController');

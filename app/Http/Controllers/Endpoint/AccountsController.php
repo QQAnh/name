@@ -37,6 +37,22 @@ class AccountsController extends Controller
     public function store(Request $request)
     {
         //
+        $accountJson = $request->json()->all();
+        try {
+            $account = new Accounts();
+            $account->fullname = $accountJson['fullname'];
+            $account->phone = $accountJson['phone'];
+            $account->password = $accountJson['password'];
+            $account->email = $accountJson['email'];
+            $account->gender = $accountJson['gender'];
+            $account->salt = $accountJson['salt'];
+            $account->role = $accountJson['role'];
+            $account->status = $accountJson['status'];
+            $account->save();
+            return response()->json($accountJson, 201);
+        } catch (EXCEPTION $exception) {
+            return response()->json($exception->errors(), 400);
+        }
     }
 
     /**
