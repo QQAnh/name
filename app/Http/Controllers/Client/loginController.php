@@ -36,7 +36,7 @@ class loginController extends Controller
         $password = $request->input('password');
 
         $account = Account::where('phone',$phone)->get();
-        if ($phone == 'Admin' && $password =='Admin'){
+        if ($phone == '12345' && $password =='Admin'){
             return view('admin/listAdmin/dashboard');
 
         }else{
