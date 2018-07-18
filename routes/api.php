@@ -26,9 +26,9 @@ Route::post('/account','Endpoint\ProductsController');
 
 Route::get('/account/{phone}','Endpoint\ProductsController@getByPhone');
 
-//Route::resource('/product','Endpoint\ProductsController');
+Route::resource('/product','Endpoint\ProductsController');
 Route::resource('/category','Endpoint\CategoriesController');
-Route::get('/product/category/{id}','Endpoint\ProductsController@getByCategory');
+//Route::get('/product/category/{id}','Endpoint\ProductsController@getByCategory');
 
 
 
