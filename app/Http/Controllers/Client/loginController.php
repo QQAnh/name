@@ -22,7 +22,7 @@ class loginController extends Controller
     }
     public function handleRequest(Request $request){
 
-        return $request->input('inputname');
+        return $request->input('name');
 
     }
 
