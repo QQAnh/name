@@ -71,19 +71,19 @@ class HomepageController extends Controller
     public function getListPC()
 {
     $category = Category::all();
-    $product = Product::where('categoryId', 3)->get();
+    $product = Product::where('category', 3)->get();
     return view('client.listClient.pc')->with('category', $category)->with('product', $product);
 }
     public function getListLaptop()
     {
         $category = Category::all();
-        $product = Product::where('categoryId', 2)->get();
+        $product = Product::where('category', 2)->get();
         return view('client.listClient.laptop')->with('category', $category)->with('product', $product);
     }
     public function getListConsole()
     {
         $category = Category::all();
-        $product = Product::where('categoryId', 4)->get();
+        $product = Product::where('category', 4)->get();
         return view('client.listClient.console')->with('category', $category)->with('product', $product);
     }
     public function index3()
