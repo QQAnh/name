@@ -11,26 +11,26 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Auth::routes();
-
-Route::get('/homepage','Client\HomepageController@index');
-Route::get('/test/{id}','Client\HomepageController@test');
-
-Route::resource('/register','Client\RegisterController');
-
-Route::get('/login','Client\loginController@getLogin');
-
-
-
-Route::get('/smartphone','Client\HomepageController@getListSmartPhone');
-Route::get('/laptop','Client\HomepageController@getListLaptop');
-Route::get('/pc','Client\HomepageController@getListPC');
-Route::get('/console','Client\HomepageController@getListConsole');
-
-
-Route::get('/intro','Client\HomepageController@index3');
-Route::get('/contact','Client\HomepageController@index4');
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//
+//Auth::routes();
+//
+//Route::get('/homepage','Client\HomepageController@index');
+//Route::get('/test/{id}','Client\HomepageController@test');
+//
+//Route::resource('/register','Client\RegisterController');
+//
+//Route::get('/login','Client\loginController@getLogin');
+//
+//
+//
+//Route::get('/smartphone','Client\HomepageController@getListSmartPhone');
+//Route::get('/laptop','Client\HomepageController@getListLaptop');
+//Route::get('/pc','Client\HomepageController@getListPC');
+//Route::get('/console','Client\HomepageController@getListConsole');
+//
+//
+//Route::get('/intro','Client\HomepageController@index3');
+//Route::get('/contact','Client\HomepageController@index4');

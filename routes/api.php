@@ -22,16 +22,16 @@ Route::group(['middleware' => 'auth:api'], function () {
 });
 
 
-Route::post('/account','Endpoint\ProductsController');
-
-//Route::get('/account/{phone}','Endpoint\ProductsController@getByPhone');
-
-Route::resource('/product','Endpoint\ProductsController');
-Route::resource('/category','Endpoint\CategoriesController');
-Route::get('/product/category/{id}','Endpoint\ProductsController@getByCategory');
-
-
-
-Route::resource('/order','OrderApiController');
-
-Route::resource('/orderDetail','OrderDetailController');
+//Route::post('/account','Endpoint\ProductsController');
+//
+////Route::get('/account/{phone}','Endpoint\ProductsController@getByPhone');
+//
+//Route::resource('/product','Endpoint\ProductsController');
+//Route::resource('/category','Endpoint\CategoriesController');
+//Route::get('/product/category/{id}','Endpoint\ProductsController@getByCategory');
+//
+//
+//
+//Route::resource('/order','OrderApiController');
+//
+//Route::resource('/orderDetail','OrderDetailController');
