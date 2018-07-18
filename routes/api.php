@@ -28,6 +28,7 @@ Route::get('/account/{phone}','TestController@show');
 
 Route::resource('/product','Endpoint\ProductsController');
 
+
 Route::resource('/order','OrderApiController');
 
 Route::resource('/orderDetail','OrderDetailController');
