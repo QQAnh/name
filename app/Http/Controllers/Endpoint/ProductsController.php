@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Endpoint;
 
+use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
