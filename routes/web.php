@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Auth::routes();
 
@@ -23,6 +23,8 @@ Route::get('/test/{id}','Client\HomepageController@test');
 Route::resource('/register','Client\RegisterController');
 
 //Route::get('/login','Client\loginController@getLogin');
+Route::get('','Client\HomepageController@getIndex');
+
 Route::get('/login','Client\loginController@getLogin');
 Route::post('/login','Client\loginController@postLogin');
 
