@@ -32,7 +32,8 @@ class loginController extends Controller
 //        }
 //        return $request->input('phone');
 
-        $phone = $request->input('phone');
+//        $phone = $request->input('phone');
+        $password = md5($request->input('password'));
 
 //        $account = Account::where('phone',$phone)->get();
 //        if ($phone =='1234'&& $password =='admin'){
@@ -41,8 +42,9 @@ class loginController extends Controller
 //        }else{
 //            return 'flase';
 //        }
-        $account = Account::where('phone',$phone)->value('password');
-        return $account;
+//        $account = Account::where('phone',$phone)->value('password');
+
+        return $password;
 
 
 
