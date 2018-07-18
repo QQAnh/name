@@ -15,10 +15,10 @@
                         </div>
                     @endif
                     <div class="form-group">
-                        <label for="">Email</label>
-                        <input type="text" class="form-control" id="email" placeholder="Email" name="email" value="{{old('email')}}">
-                        @if($errors->has('email'))
-                            <p style="color:red">{{$errors->first('email')}}</p>
+                        <label for="">Phone</label>
+                        <input type="number" class="form-control" id="email" placeholder="Phone" name="phone" value="{{old('phone')}}">
+                        @if($errors->has('phone'))
+                            <p style="color:red">{{$errors->first('phone')}}</p>
                         @endif
                     </div>
                     <div class="form-group">

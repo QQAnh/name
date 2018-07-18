@@ -6,6 +6,8 @@ use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+
 
 class HomepageController extends Controller
 {
@@ -36,12 +38,11 @@ class HomepageController extends Controller
     public function postLogin(Request $request)
     {
         $rules = [
-            'email' => 'required|email',
-            'password' => 'required|min:8'
+            'phone' => 'required|phone',
+            'password' => 'required'
         ];
         $messages = [
-            'email.required' => 'Email là trường bắt buộc',
-            'email.email' => 'Email không đúng định dạng',
+            'phone.required' => 'Email là trường bắt buộc',
             'password.required' => 'Mật khẩu là trường bắt buộc',
             'password.min' => 'Mật khẩu phải chứa ít nhất 8 ký tự',
         ];
@@ -50,13 +51,13 @@ class HomepageController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         } else {
-            $email = $request->input('email');
+            $email = $request->input('phone');
             $password = $request->input('password');
 
-            if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            if (Auth::attempt(['phone' => $email, 'password' => $password])) {
                 return redirect()->intended('/');
             } else {
-                $errors = new MessageBag(['errorlogin' => 'Email hoặc mật khẩu không đúng']);
+                $errors = new MessageBag(['errorlogin' => 'Phone hoặc mật khẩu không đúng']);
                 return redirect()->back()->withInput()->withErrors($errors);
             }
         }

@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/homepage','Client\HomepageController@index');
 Route::get('/test/{id}','Client\HomepageController@test');
 Route::get('/register','Client\HomepageController@register');
-Route::get('/login','Client\HomepageController@getLogin');
+Route::post('/login','Client\HomepageController@getLogin');
 
 
 Route::get('/smartphone','Client\HomepageController@getListSmartPhone');
