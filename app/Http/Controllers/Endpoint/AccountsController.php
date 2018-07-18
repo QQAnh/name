@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Endpoint;
 
+use App\Accounts;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -81,5 +82,8 @@ class AccountsController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function getByPhone(Request $request){
+        $account = Accounts::where('phone',$request->input('phone'))->get();
     }
 }
