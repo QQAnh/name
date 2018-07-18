@@ -19,17 +19,20 @@ class loginController extends Controller
     {
 
 
-        $phone = $request->input('phone');
-        $password = $request->input('password');
-        $account = Accounts::where('phone', $phone)->where('password',$password)->get();
-        if ($account == null) {
-            return "tai khoan ko ton tai";
+//        $phone = $request->input('phone');
+//        $password = $request->input('password');
+//        $account = Accounts::where('phone', $phone)->where('password',$password)->get();
+//        if ($account == null) {
+//            return "tai khoan ko ton tai";
+//
+//
+//        } else {
+//            return "success";
+//        }
+        return $request->input('phone')->input('password');
 
 
-        } else {
-            return "success";
-        }
-        }
+    }
 
 
 
