@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Account;
 use App\Accounts;
 
 use Illuminate\Http\Request;
@@ -33,9 +34,7 @@ class loginController extends Controller
 
         $phone = $request->input('phone');
 //        $password = $request->input('password');
-        $account = DB::table('accounts')->where('phone', $phone)
-//            ->value('password')
-            ->get();
+        $account =Account::where('phone',$phone)->get();
 
         return $account;
 
