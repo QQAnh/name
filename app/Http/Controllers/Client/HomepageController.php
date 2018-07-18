@@ -34,6 +34,13 @@ class HomepageController extends Controller
 //        return view('client.listClient.login');
 //
 //    }
+    public function listItem(){
+        $product = Product::paginate(8);
+        $category = Category::all();
+        return view('client.listProduct.listItemHomepage')
+            ->with('product',$product)
+            ->with('category',$category)  ;
+    }
 
     public function getIndex() {
         return 'Đăng nhập thành công!!!';

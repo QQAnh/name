@@ -24,6 +24,8 @@ Route::resource('/register','Client\RegisterController');
 
 //Route::get('/login','Client\loginController@getLogin');
 Route::get('','Client\HomepageController@getIndex');
+Route::get('/listItem','Client\HomepageController@listItem');
+
 
 //Route::get('/login','Client\loginController@getLogin');
 //Route::post('/login','Client\loginController@getPhone');
