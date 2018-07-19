@@ -413,10 +413,10 @@
                 <a class="nav-link" href="#">Trang chủ  <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Thông tin</a>
+                <a class="nav-link" href="/intro">Thông tin</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#">Liên hệ </a>
+                <a class="nav-link disabled" href="/contact">Liên hệ </a>
             </li>
         </ul>
         <ul class="navbar-nav mr-5">
@@ -474,7 +474,6 @@
     <hr>
     <div class="row">
         <aside class="col-sm-3">
-            <p>Card banner overlay </p>
 
             <a href="/smartphone"><div class="card-banner  overlay-grad" style="height:250px; background-image: url('https://i.kinja-img.com/gawker-media/image/upload/t_original/evtwgjgb3xbmtirbyawn.jpg');">
                 <div class="card-body text-white">
@@ -486,7 +485,6 @@
 
         </aside>
         <aside class="col-sm-3">
-            <p>Card banner overlay </p>
 
             <a href="/laptop"> <div class="card-banner  overlay-grad" style="height:250px; background-image: url('https://img.purch.com/1524196804874-jpg/w/755/aHR0cDovL21lZGlhLmJlc3RvZm1pY3JvLmNvbS8yL1EvNzY2MDM0L29yaWdpbmFsLzE1MjQxOTY4MDQ4NzQuanBn');">
                 <div class="card-body text-white">
@@ -498,7 +496,6 @@
 
         </aside>
         <aside class="col-sm-3">
-            <p>Card banner overlay </p>
 
             <a href="/pc"> <div class="card-banner  overlay-grad" href="#" style="height:250px; background-image: url('https://genknews.genkcdn.vn/2016/photo-0-1475228344066.jpg');">
                 <div class="card-body text-white">
@@ -509,7 +506,6 @@
 
         </aside>
         <aside class="col-sm-3">
-            <a><p>Card banner overlay </p></a>
 
             <a href="/console"> <div class="card-banner  overlay-grad" style="height:250px; background-image: url('https://www.console-deals.com/advice/wp-content/uploads/2017/10/Xbox-One-X-Console-White-1.png');">
                 <div class="card-body text-white">
