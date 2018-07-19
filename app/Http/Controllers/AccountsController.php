@@ -104,8 +104,8 @@ class AccountsController extends Controller
 //        $user->fullname = $request->get("fullname");
 //        $user->phone = $request->get("phone");
         $passwordpost = md5($passwordselect);
-        $user->password = $request->get($passwordpost);
-         return  $user->password;
+//        $user->password = $request->get($passwordpost);
+         return  $passwordpost;
 //        $user->password = $request->get($passwordpost);
 //        $user->gender = $request->get("gender");
 //        $user->email = $request->get("email");
