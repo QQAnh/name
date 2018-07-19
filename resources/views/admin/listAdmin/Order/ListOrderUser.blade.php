@@ -36,9 +36,13 @@
                             <tbody >
                             @foreach($order as $item)
                                 <tr id="{{$item->id}}">
-                                    <td>{{$item->id}}</td>
-                                    <td>{{$item->fullname}} </td>
-                                    <td>{{$item->title}}</td>
+                                    <td>{{$item->UserId}}</td>
+                                    <td>{{$item->nameReceiver}} </td>
+                                    <td>{{$item->addressReceiver}}</td>
+                                    <td>{{$item->phoneReceiver}}</td>
+                                    <td>{{$item->addressReceiver}}</td>
+                                    <td>{{$item->note}}</td>
+
                                     <td>{{$item->quantity}}</td>
                                     <td>{{$item->totalMoney}}</td>
                                 </tr>
