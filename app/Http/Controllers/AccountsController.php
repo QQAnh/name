@@ -98,26 +98,23 @@ class AccountsController extends Controller
         if ($user == null) {
             return view("errors.404");
         }
-        $password = $request->input('password');
         $user->salt = rand();
-        $passwordselect = $password.$user->salt;
-//        $user->fullname = $request->get("fullname");
-//        $user->phone = $request->get("phone");
-        $passwordpost = md5($passwordselect);
-//        $user->password = $request->get($passwordpost);
-         return  $passwordpost;
-//        $user->password = $request->get($passwordpost);
-//        $user->gender = $request->get("gender");
-//        $user->email = $request->get("email");
-//        $user->role = 'Member';
-//        $user->status = 1;
-//        $user->avatar = $request->get('avatar2');
-//        $user->save();
-//        if ($request->get("isAjax")) {
-//            return $user;
-//        } else {
-//            return redirect("user");
-//        }
+
+        $user->fullname = $request->get("fullname");
+        $user->phone = $request->get("phone");
+        $user->password = md5($request->get('password'));
+        $user->gender = $request->get("gender");
+        $user->email = $request->get("email");
+        $user->role = 'Member';
+
+        $user->status = 1;
+        $user->avatar = $request->get('avatar2');
+        $user->save();
+        if ($request->get("isAjax")) {
+            return $user;
+        } else {
+            return redirect("user");
+        }
     }
 
     /**
