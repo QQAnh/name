@@ -94,11 +94,11 @@ class AccountsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = Account::find($id);
-        if ($user == null) {
-            return view("errors.404");
-        }
-        $user->salt = rand();
+//        $user = Account::find($id);
+//        if ($user == null) {
+//            return view("errors.404");
+//        }
+//        $user->salt = rand();
         $password = $request->input('password');
         return md5($password);
 
@@ -128,5 +128,16 @@ class AccountsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function createTest(){
+        return view('admin.User.FromUser');
+
+    }
+    public function createTest2(Request $request){
+
+        $password = $request->input('password');
+        return md5($password);
     }
 }

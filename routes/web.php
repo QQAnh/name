@@ -29,10 +29,10 @@ Route::get('/listItem','Client\HomepageController@listItem');
 
 Route::get('/login','Client\loginController@getLogin');
 Route::post('/login','Client\loginController@getPhone');
-//Route::get('/register',function (){
-//    return view('client.listClient.register');
-//});
-//Route::post('/register','Client\RegisterController@store');
+Route::get('/register',function (){
+    return view('admin.User.FormUser');
+});
+Route::post('/register','AccountsController@createTest2');
 
 
 Route::get('/admin', function (){
@@ -61,6 +61,7 @@ Route::get('/smartphone','Client\HomepageController@getListSmartPhone');
 Route::get('/laptop','Client\HomepageController@getListLaptop');
 Route::get('/pc','Client\HomepageController@getListPC');
 Route::get('/console','Client\HomepageController@getListConsole');
+
 
 
 Route::get('/intro','Client\HomepageController@index3');
