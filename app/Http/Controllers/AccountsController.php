@@ -98,10 +98,13 @@ class AccountsController extends Controller
         if ($user == null) {
             return view("errors.404");
         }
+        $user->salt = rand();
 
         $user->fullname = $request->get("fullname");
         $user->phone = $request->get("phone");
-        $user->password = $request->get("password");
+        $password = $request->input('password');
+        $passwordpost = md5($password.$user->salt);
+        $user->password = $request->get($passwordpost);
         $user->gender = $request->get("gender");
         $user->email = $request->get("email");
         $user->salt = rand();
