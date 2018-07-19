@@ -94,7 +94,26 @@ class AccountsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Account::find($id);
+        if ($user == null) {
+            return view("errors.404");
+        }
+
+        $user->fullname = $request->get("fullname");
+        $user->phone = $request->get("phone");
+        $user->password = $request->get("password");
+        $user->gender = $request->get("gender");
+        $user->email = $request->get("email");
+        $user->salt = rand();
+        $user->role = '1';
+        $user->status = 1;
+        $user->avatar = $request->get('avatar2');
+        $user->save();
+        if ($request->get("isAjax")) {
+            return $user;
+        } else {
+            return redirect("user");
+        }
     }
 
     /**
