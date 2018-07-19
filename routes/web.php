@@ -23,12 +23,16 @@ Route::get('/test/{id}','Client\HomepageController@test');
 Route::resource('/register','Client\RegisterController');
 
 //Route::get('/login','Client\loginController@getLogin');
-Route::get('','Client\HomepageController@getIndex');
+//Route::get('','Client\HomepageController@getIndex');
 Route::get('/listItem','Client\HomepageController@listItem');
 
 
 Route::get('/login','Client\loginController@getLogin');
 Route::post('/login','Client\loginController@getPhone');
+Route::get('/register','Client\RegisterController@create');
+Route::post('/register','Client\RegisterController@store');
+
+
 Route::get('/admin', function (){
     return view('admin.listAdmin.dashboard');
 });

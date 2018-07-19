@@ -40,20 +40,20 @@ class OrderApiController extends Controller
     {
         try {
             $userJson = $request->json()->all();
-            $validator = Validator::make($userJson, [
-                'nameBuyes' => 'required|unique:orders|max:50',
-                'nameReceiver' => 'required',
-                'addressReceiver' => 'required',
-                'phoneBuyes' => 'required',
-                'phoneReceiver' => 'required',
-                'totalMoney' => 'required',
-                'note' => 'required',
-                'UserId'=>'required',
-            ]);
-            if ($validator->fails()) {
-                return response()->json($validator->errors(), 400);
-
-            }
+//            $validator = Validator::make($userJson, [
+//                'nameBuyes' => 'required|unique:orders|max:50',
+//                'nameReceiver' => 'required',
+//                'addressReceiver' => 'required',
+//                'phoneBuyes' => 'required',
+//                'phoneReceiver' => 'required',
+//                'totalMoney' => 'required',
+//                'note' => 'required',
+//                'UserId'=>'required',
+//            ]);
+//            if ($validator->fails()) {
+//                return response()->json($validator->errors(), 400);
+//
+//            }
             $productJson = $request->json()->all();
             $order = new Order();
             $order->nameBuyes = $productJson['nameBuyes'];
@@ -71,6 +71,10 @@ class OrderApiController extends Controller
             $order->note = $productJson['note'];
 
             $order->UserId = $productJson['UserId'];
+
+//            for ($i =0 ;$i <  ){
+//
+//            }
 
 //            $order->created_at = $productJson['created_at'];
 //

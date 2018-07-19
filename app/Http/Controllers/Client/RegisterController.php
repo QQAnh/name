@@ -15,8 +15,9 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        //
+
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -25,7 +26,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        return view('listClient.register')->with([
+        return view('client.listClient.register')->with([
             "product"=> new Accounts(),
             "action"=>"/register",
             "method"=>"POST"
@@ -44,14 +45,14 @@ class RegisterController extends Controller
         $user = new Accounts();
         $user->fullname = $request->get("fullname");
         $user->phone = $request->get("phone");
-        $user->password = $request->get("password");
+        $user->password = md5($request->get("password"));
         $user->gender = $request->get("gender");
         $user->email = $request->get("email");
         $user->salt = rand();
         $user->role = 1;
         $user->status = '1';
         $user->save();
-        return redirect('user');
+        return redirect('/homepage');
     }
 
     /**
