@@ -1,6 +1,17 @@
 @extends('client.layoutHomepage.master')
 @section('title', 'Giới Thiệu')
 
+<style>
+    .breadcrumb.brand-success{
+        background-color:#5cb85c;
+    }
+    .breadcrumb.brand-success a{
+        color:#fff;
+    }
+    .breadcrumb.brand-success li.active{
+        color:#eee;
+    }
+</style>
 @section('content')
 
     <div class="main">
@@ -9,15 +20,13 @@
                 <div class="col-md-3">
 
                     <div class="menu-about">
-                        <h3>
-        <span>
-            Giới thiệu
-        </span>
-                        </h3>
-                        <ul>
-                            <li><a href="/gioi-thieu/ve-chung-toi.html">Về ch&#250;ng t&#244;i</a></li>
-                        </ul>
-                    </div>                    </div>
+                        <ol class="breadcrumb brand-success">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Library</a></li>
+                            <li class="active">Data</li>
+                        </ol>
+                    </div>
+                </div>
                 <div class="col-md-9">
 
                     <div class="breadcrumb clearfix">
@@ -62,10 +71,16 @@
                                     Bằng việc kiên trì thực hiện Hệ thống quản lý chất lượng phù hợp với tiêu chuẩn Quốc tế ISO 9001: 2008, CONINCO đảm bảo cung cấp các dịch vụ và sản phẩm tốt nhất để làm hài lòng Quý vị khách hàng, hy vọng mang lại được nhiều lợi ích cho cộng đồng góp phần vào sự nghiệp xây dựng phát triển đất nước.</div>
 
                             </div>
-                            <div class="social-group">
-                            </div>
                         </div>
-                    </div>                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                        </div>
+                    </div>
+
             </div>
         </div>
     </div>
