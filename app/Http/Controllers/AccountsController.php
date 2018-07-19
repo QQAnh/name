@@ -107,8 +107,7 @@ class AccountsController extends Controller
         $user->password = $request->get($passwordpost);
         $user->gender = $request->get("gender");
         $user->email = $request->get("email");
-        $user->salt = rand();
-        $user->role = '1';
+        $user->role = 'Member';
         $user->status = 1;
         $user->avatar = $request->get('avatar2');
         $user->save();
