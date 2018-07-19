@@ -17,7 +17,7 @@
 
 Auth::routes();
 
-Route::get('/homepage','Client\HomepageController@index');
+Route::get('/','Client\HomepageController@index');
 Route::get('/test/{id}','Client\HomepageController@test');
 
 Route::resource('/register','Client\RegisterController');
@@ -38,9 +38,9 @@ Route::post('/login','Client\loginController@getPhone');
 Route::get('/admin', function (){
     return view('admin.listAdmin.dashboard');
 });
-Route::get('/', function (){
-    return view('client.listClient.register');
-});
+//Route::get('/', function (){
+//    return view('client.listClient.register');
+//});
 Route::resource('user','AccountsController');
 Route::resource('/order','OrderController');
 Route::resource('/admin/smartphone','ProductSmartPhonesController');
