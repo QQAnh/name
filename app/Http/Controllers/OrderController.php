@@ -75,6 +75,7 @@ class OrderController extends Controller
         $order->phoneBuyes = $request->get("phoneBuyes");
         $order->phoneReceiver = $request->get('phoneReceiver');
         $order->totalMoney=$request->get('totalMoney');
+        $order->note=$request->get('note');
         $order->quantity = $request->get('quantity');
         $order->save();
         return redirect('/order');
