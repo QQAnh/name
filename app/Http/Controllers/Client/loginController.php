@@ -45,7 +45,9 @@ class loginController extends Controller
 //            return 'fales';
 //        }
 //        return md5($password);
-        $account = DB::table('accounts')->where('phone',$phone)->get();
+//        $account = DB::table('accounts')->where('phone',$phone)->get();
+        $account = Account::where('phone',$phone)->get();
+
         return $account;
 
 
