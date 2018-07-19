@@ -39,7 +39,7 @@ class loginController extends Controller
         $salt = Account::where('phone',$phone)->value('salt');
         $passwordGet = Account::where('phone',$phone)->value('password');
         $passwordNonEncrypt = $password . $salt;
-        $passwordEncrypt = md5($passwordNonEncrypt);
+        $passwordEncrypt = base64_encode(md5($passwordNonEncrypt));
 //        $role =  Account::where('phone',$phone)->value('role');
 //        if (md5($password) == $apipassword ){
 //
