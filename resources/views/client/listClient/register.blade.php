@@ -8,13 +8,14 @@
         }
     }
 </style>
+<link href="{{asset('css/layout.css')}}" rel="stylesheet">
+
 @section('content')
 
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Create User</h1>
         </div>
-        <!-- /.col-lg-12 -->
     </div>
     <div class="row">
         <div class="col-lg-8">
@@ -123,4 +124,15 @@
     </div>
 
 
+@endsection
+@section('js')
+    <script src="{{asset('vendor-admin/datatables/js/jquery.dataTables.min.js')}}"> </script>
+
+    <script src="{{asset('vendor-admin/datatables-plugins/dataTables.bootstrap.min.js')}}"> </script>
+
+    <script src="{{asset('vendor-admin/datatables-responsive/dataTables.responsive.js')}}"> </script>
+
+    <script src="{{asset('vendor-admin/datatables-responsive/dataTables.responsive.js')}}"> </script>
+
+    <script src="{{asset('js/admin/formUser.js')}}"> </script>
 @endsection

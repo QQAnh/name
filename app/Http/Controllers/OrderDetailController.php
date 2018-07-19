@@ -41,16 +41,16 @@ class OrderDetailController extends Controller
     {
         try{
             $orderdetailJson = $request->json()->all();
-            $validator = Validator::make($orderdetailJson, [
-                'orderId' => 'required|unique:order_details|max:50',
-                'productId'=>'required',
-                'quantity'=>'required',
-            ]);
-
-            if ($validator->fails()) {
-                return response()->json($validator->errors(), 400);
-
-            }
+//            $validator = Validator::make($orderdetailJson, [
+//                'orderId' => 'required|unique:order_details|max:50',
+//                'productId'=>'required',
+//                'quantity'=>'required',
+//            ]);
+//
+//            if ($validator->fails()) {
+//                return response()->json($validator->errors(), 400);
+//
+//            }
             $orderdetailJson1 = $request->json()->all();
             $orderdetail = new Order_detail();
             $orderdetail->orderId = $orderdetailJson1['orderId'];
