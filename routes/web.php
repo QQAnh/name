@@ -29,7 +29,9 @@ Route::get('/listItem','Client\HomepageController@listItem');
 
 Route::get('/login','Client\loginController@getLogin');
 Route::post('/login','Client\loginController@getPhone');
-Route::get('/register','Client\RegisterController@create');
+Route::get('/register',function (){
+    return view('client.listClient.register');
+});
 Route::post('/register','Client\RegisterController@store');
 
 
