@@ -35,15 +35,16 @@ class loginController extends Controller
         $phone = $request->input('phone');
         $password = $request->input('password');
 
-        $apipassword = Account::where('phone',$phone)->value('password');
-        $role =  Account::where('phone',$phone)->value('role');
-        if (md5($password) == $apipassword ){
-
-            return view('admin/listAdmin/dashboard');
-        }else{
-
-            return 'fales';
-        }
+//        $apipassword = Account::where('phone',$phone)->value('password');
+//        $role =  Account::where('phone',$phone)->value('role');
+//        if (md5($password) == $apipassword ){
+//
+//            return view('admin/listAdmin/dashboard');
+//        }else{
+//
+//            return 'fales';
+//        }
+        return md5($password);
 
 
 
