@@ -40,13 +40,11 @@ class loginController extends Controller
             return view('admin/listAdmin/dashboard');
 
         }else{
-            return 'flase';
+            return view('client.listClient.login');
         }
 //        $account = Account::where('phone',$phone)->value('password');
-//        $account = DB::table('accounts')->where('phone',$phone)->get();
 
-               return response()->json($account, 200);
-;
+//        return ;
 
 
 

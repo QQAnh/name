@@ -32,6 +32,7 @@ Route::post('/login','Client\loginController@getPhone');
 Route::get('/admin', function (){
     return view('admin.listAdmin.dashboard');
 });
+Route::resource('user','AccountsController');
 Route::resource('/order','OrderController');
 
 
