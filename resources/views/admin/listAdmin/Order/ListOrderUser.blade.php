@@ -26,9 +26,12 @@
                             <tr>
                                 <th>#</th>
                                 <th>User</th>
-                                <th>Product</th>
-                                <th>Quantity</th>
-                                <th>TotalMoney</th>
+                                <th>Name Receiver</th>
+                                <th>PhoneReceiver</th>
+                                <th>Address Receiver</th>
+                                <th>Note</th>
+                                <th>Total Money</th>
+
                             </tr>
                             </thead>
                             <tbody id="demo-get">
@@ -38,11 +41,9 @@
                                 <tr id="{{$item->id}}">
                                     <td>{{$item->UserId}}</td>
                                     <td>{{$item->nameReceiver}} </td>
-                                    <td>{{$item->addressReceiver}}</td>
                                     <td>{{$item->phoneReceiver}}</td>
                                     <td>{{$item->addressReceiver}}</td>
                                     <td>{{$item->note}}</td>
-
                                     <td>{{$item->quantity}}</td>
                                     <td>{{$item->totalMoney}}</td>
                                 </tr>
