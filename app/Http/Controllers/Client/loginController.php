@@ -49,7 +49,7 @@ class loginController extends Controller
 //        return md5($password.$salt);
 //        $account = DB::table('accounts')->where('phone',$phone)->get();
 //        $account = Account::where('phone',$phone)->get();
-        return $password.$salt . '-' . $passwordGet.$salt  ;
+        return $password.$salt . '-' . $passwordGet  ;
 
 
 
