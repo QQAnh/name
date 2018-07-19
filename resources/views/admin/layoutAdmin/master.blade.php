@@ -98,16 +98,16 @@
 
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/smartphone"><i class="fa fa-edit fa-fw"></i>SmartPhone</a>
+                                <a href="/admin/smartphone"><i class="fa fa-edit fa-fw"></i>SmartPhone</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-edit fa-fw"></i>PC</a>
+                                <a href="/admin/pc"><i class="fa fa-edit fa-fw"></i>PC</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-edit fa-fw"></i>Laptop</a>
+                                <a href="/admin/laptop"><i class="fa fa-edit fa-fw"></i>Laptop</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-edit fa-fw"></i>SmartPhone</a>
+                                <a href="/admin/console"><i class="fa fa-edit fa-fw"></i>Console</a>
                             </li>
                         </ul>
                     </li>
