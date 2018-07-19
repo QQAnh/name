@@ -46,7 +46,7 @@ class loginController extends Controller
             return view('admin/listAdmin/dashboard');
         }else{
 
-            return view('client.listClient.login')->flash('successMsg','Saved succesfully!');
+            return view('client.listClient.login');
         }
 //        return md5($password.$salt);
 //        $account = DB::table('accounts')->where('phone',$phone)->get();
