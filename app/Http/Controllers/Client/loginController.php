@@ -35,7 +35,7 @@ class loginController extends Controller
         $phone = $request->input('phone');
         $password = $request->input('password');
 
-//        $apipassword = Account::where('phone',$phone)->value('password');
+        $apipassword = Account::where('phone',$phone)->value('password');
 //        $role =  Account::where('phone',$phone)->value('role');
 //        if (md5($password) == $apipassword ){
 //
@@ -44,11 +44,10 @@ class loginController extends Controller
 //
 //            return 'fales';
 //        }
-//        return md5($password);
+        return md5($password);
 //        $account = DB::table('accounts')->where('phone',$phone)->get();
-        $account = Account::where('phone',$phone)->get();
+//        $account = Account::where('phone',$phone)->get();
 
-        return $account;
 
 
 
