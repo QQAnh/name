@@ -41,7 +41,7 @@ class loginController extends Controller
         $passwordNonEncrypt = $password . $salt;
         $passwordEncrypt = md5($passwordNonEncrypt);
         $role =  Account::where('phone',$phone)->value('role');
-        if ($passwordGet == $passwordEncrypt && $role = 'Admin'){
+        if ($passwordGet == $passwordEncrypt && $role == 'Admin'){
 
             return view('admin/listAdmin/dashboard');
         }else{
