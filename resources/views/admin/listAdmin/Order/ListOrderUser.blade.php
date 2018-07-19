@@ -24,8 +24,7 @@
                         <table class="table table-striped table-bordered table-hover">
                             <thead>
                             <tr>
-                                <th>#</th>
-                                <th>User</th>
+                                <th>UserId</th>
                                 <th>Name Receiver</th>
                                 <th>PhoneReceiver</th>
                                 <th>Address Receiver</th>
