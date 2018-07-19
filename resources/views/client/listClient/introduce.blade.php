@@ -1,34 +1,14 @@
 @extends('client.layoutHomepage.master')
 @section('title', 'Giới Thiệu')
 
-<style>
-    .breadcrumb.brand-success {
-        background-color: #5cb85c;
-    }
 
-    .breadcrumb.brand-success a {
-        color: #fff;
-    }
-
-    .breadcrumb.brand-success li.active {
-        color: #eee;
-    }
-</style>
 @section('content')
 
     <div class="main">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
-                </div>
-                <div class="col-md-9">
-                    <ol class="breadcrumb brand-success">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Library</a></li>
-                        <li class="active">Data</li>
-                    </ol>
 
-                </div>
+
                 <script type="text/javascript">
                     $(".link-site-more").hover(function () {
                         $(this).find(".s-c-n").show();
