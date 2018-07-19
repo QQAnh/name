@@ -35,7 +35,20 @@ class loginController extends Controller
         $phone = $request->input('phone');
         $password = $request->input('password');
 
-        $account = Account::where('phone',$phone)->value('password');
+        $apipassword = Account::where('phone',$phone)->value('password');
+        $role =  Account::where('phone',$phone)->value('role');
+        if ($password == $apipassword ){
+
+            return view('admin/listAdmin/dashboard');
+        }else{
+
+            return 'fales';
+        }
+
+
+
+
+
 //        if ($phone == '12345' && $password =='Admin'){
 //            return view('admin/listAdmin/dashboard');
 //
