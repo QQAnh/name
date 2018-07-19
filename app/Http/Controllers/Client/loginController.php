@@ -40,18 +40,18 @@ class loginController extends Controller
         $passwordGet = Account::where('phone',$phone)->value('password');
         $passwordNonEncrypt = $password . $salt;
         $passwordEncrypt = md5($passwordNonEncrypt);
-//        $role =  Account::where('phone',$phone)->value('role');
-//        if (md5($password) == $apipassword ){
-//
-//            return view('admin/listAdmin/dashboard');
-//        }else{
-//
-//            return 'fales';
-//        }
+        $role =  Account::where('phone',$phone)->value('role');
+        if ($passwordGet == $passwordEncrypt && $role = 'Admin'){
+
+            return view('admin/listAdmin/dashboard');
+        }else{
+
+            return 'fales';
+        }
 //        return md5($password.$salt);
 //        $account = DB::table('accounts')->where('phone',$phone)->get();
 //        $account = Account::where('phone',$phone)->get();
-        return $passwordNonEncrypt . '-' . $passwordEncrypt . '-' . $passwordGet  ;
+        return  ;
 
 
 
