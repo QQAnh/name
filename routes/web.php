@@ -29,14 +29,17 @@ Route::get('/listItem','Client\HomepageController@listItem');
 
 Route::get('/login','Client\loginController@getLogin');
 Route::post('/login','Client\loginController@getPhone');
-Route::get('/register',function (){
-    return view('client.listClient.register');
-});
-Route::post('/register','Client\RegisterController@store');
+//Route::get('/register',function (){
+//    return view('client.listClient.register');
+//});
+//Route::post('/register','Client\RegisterController@store');
 
 
 Route::get('/admin', function (){
     return view('admin.listAdmin.dashboard');
+});
+Route::get('/', function (){
+    return view('client.listClient.register');
 });
 Route::resource('user','AccountsController');
 Route::resource('/order','OrderController');
