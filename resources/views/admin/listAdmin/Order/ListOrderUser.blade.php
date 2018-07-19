@@ -29,7 +29,7 @@
                                 <th>Phone Receiver</th>
                                 <th>Address Receiver</th>
                                 <th>Note</th>
-                                <th>Total Money</th>
+                                <th>Total Money (VND)</th>
 
                             </tr>
                             </thead>
@@ -43,7 +43,7 @@
                                     <td>{{$item->phoneReceiver}}</td>
                                     <td>{{$item->addressReceiver}}</td>
                                     <td>{{$item->note}}</td>
-                                    <td>{{$item->totalMoney}} VND</td>
+                                    <td>{{$item->totalMoney}} </td>
                                 </tr>
                             @endforeach
                             </tbody>
