@@ -112,7 +112,7 @@ class ProductSmartPhonesController extends Controller
         if ($request->get("isAjax")) {
             return $product;
         } else {
-            return redirect("smartphone");
+            return redirect("/admin/smartphone");
         }
     }
     /**
