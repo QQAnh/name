@@ -87,7 +87,7 @@ class ProductSmartPhonesController extends Controller
         }
         return view('admin.listAdmin.Product.SmartPhone.formProductPhone')->with([
             "product"=> $product,
-            "action"=>"/smartphone/" . $product->id,
+            "action"=>"/admin/smartphone/" . $product->id,
             "method"=>"PUT"
         ]) ;
     }
