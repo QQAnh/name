@@ -125,7 +125,7 @@ class ProductSmartPhonesController extends Controller
     {
         $user = Product::find($id);
         $user->delete();
-        return redirect('smartphone');
+        return redirect('/admin/smartphone');
     }
 
 
