@@ -44,6 +44,7 @@ Route::get('/admin', function (){
 Route::resource('user','AccountsController');
 Route::resource('/order','OrderController');
 Route::resource('/admin/smartphone','ProductSmartPhonesController');
+
 Route::get('/admin/pc','ProductSmartPhonesController@showPC');
 Route::get('/admin/laptop','ProductSmartPhonesController@showLaptop');
 Route::get('/admin/console','ProductSmartPhonesController@showConsole');
