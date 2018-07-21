@@ -31,7 +31,7 @@ class ProductSmartPhonesController extends Controller
     {
         return view('admin.listAdmin.Product.SmartPhone.formProductPhone')->with([
             "product"=> new Product(),
-            "action"=>"/smartphone",
+            "action"=>"/admin/smartphone",
             "method"=>"POST"
         ]);
 
@@ -52,7 +52,7 @@ class ProductSmartPhonesController extends Controller
             'thumbnail' => 'required'
         ]);
         if ($validator->fails()) {
-            return redirect('smartphone/create')
+            return redirect('/admin/smartphone/create')
                 ->withErrors($validator->errors())
                 ->withInput();
         }
