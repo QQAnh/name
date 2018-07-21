@@ -127,7 +127,7 @@ class ProductSmartPhonesController extends Controller
         $user->delete();
         return redirect('smartphone');
     }
-}
+
 
 
     public function showPC()
