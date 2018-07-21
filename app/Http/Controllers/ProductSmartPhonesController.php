@@ -31,7 +31,7 @@ class ProductSmartPhonesController extends Controller
     {
         return view('admin.listAdmin.Product.SmartPhone.formProductPhone')->with([
             "product"=> new Product(),
-            "action"=>"/admin/smartphone",
+            "action"=>"smartphone",
             "method"=>"POST"
         ]);
 
