@@ -64,7 +64,7 @@ class ProductSmartPhonesController extends Controller
         $product->thumbnail = $request->get("avatar2");
         $product->categoryId = 1;
         $product->save();
-        return redirect('/smartphone');
+        return redirect('/admin/smartphone');
     }
 
     /**
@@ -92,7 +92,7 @@ class ProductSmartPhonesController extends Controller
         }
         return view('admin.listAdmin.Product.SmartPhone.formProductPhone')->with([
             "product"=> $product,
-            "action"=>"/smartphone/" . $product->id,
+            "action"=>"admin/smartphone/" . $product->id,
             "method"=>"PUT"
         ]) ;
     }

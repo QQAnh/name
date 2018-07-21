@@ -14,7 +14,7 @@
                    <ul class="nav nav-tabs " style="border-bottom: none">
                        <li class="col-md-9">List SmartPhone</li>
                        <li>
-                           <a href="/smartphone/create" style="padding: 0; color: white">Create new product</a>
+                           <a href="/admin/smartphone/create" style="padding: 0; color: white">Create new product</a>
                        </li>
                    </ul>
                 </div>
