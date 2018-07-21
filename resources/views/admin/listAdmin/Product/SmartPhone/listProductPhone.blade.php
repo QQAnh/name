@@ -50,7 +50,7 @@
                                     <td>
                                         <a href="/admin/smartphone/{{$item->id}}/edit" id="putUser" class="fa fa-edit"> Edit</a> <p> </p>
 
-                                        <a href="/admin/smartphone/{{$item->id}}/destroy" id="delete-{{$item->id}}" class="fa fa-trash btn-delete"> Delete</a>
+                                        <a href="#" id="delete-{{$item->id}}" class="fa fa-trash btn-delete"> Delete</a>
                                     </td>
                                 </tr>
                             @endforeach
