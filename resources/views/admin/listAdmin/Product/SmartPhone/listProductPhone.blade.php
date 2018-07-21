@@ -94,7 +94,7 @@
             deleteId = $(this).attr("id").replace('delete-', '');
             var name = $('#title-' + deleteId).text();
             name = "Sản phẩm với tên là: '" + {{$product ->title }} + "'";
-            $('#modalContent').text(name);
+            $('#modalContent').text({{$product ->title }});
             $('#exampleModal').modal('show');
         });
 
