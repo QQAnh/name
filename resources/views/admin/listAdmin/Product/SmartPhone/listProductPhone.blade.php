@@ -93,8 +93,8 @@
         $('.btn-delete').click(function () {
             deleteId = $(this).attr("id").replace('delete-', '');
             var name = $('#title-' + deleteId).text();
-            name = "Sản phẩm với tên là: '" + {{$product ->title }} + "'";
-            $('#modalContent').text({{$product ->title }});
+            name = "Sản phẩm với tên là: '" + name + "'";
+            $('#modalContent').text(name);
             $('#exampleModal').modal('show');
         });
 
