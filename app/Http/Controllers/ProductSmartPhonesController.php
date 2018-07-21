@@ -16,12 +16,12 @@ class ProductSmartPhonesController extends Controller
      */
     public function index()
     {
-        $product =Product::where('category','=',1)
+        $product = DB::table('products')
+            ->where('category','=',1)
             ->get();
 //        return response()->json($product, 200);
         return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -31,12 +31,10 @@ class ProductSmartPhonesController extends Controller
     {
         return view('admin.listAdmin.Product.SmartPhone.formProductPhone')->with([
             "product"=> new Product(),
-            "action"=>"smartphone",
+            "action"=>"/smartphone",
             "method"=>"POST"
         ]);
-
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -52,11 +50,10 @@ class ProductSmartPhonesController extends Controller
             'thumbnail' => 'required'
         ]);
         if ($validator->fails()) {
-            return redirect('/admin/smartphone/create')
+            return redirect('smartphone/create')
                 ->withErrors($validator->errors())
                 ->withInput();
         }
-
         $product = new Product();
         $product->title = $request->get("title");
         $product->description = $request->get("description");
@@ -64,9 +61,8 @@ class ProductSmartPhonesController extends Controller
         $product->thumbnail = $request->get("avatar2");
         $product->categoryId = 1;
         $product->save();
-        return redirect('/admin/smartphone');
+        return redirect('/smartphone');
     }
-
     /**
      * Display the specified resource.
      *
@@ -77,7 +73,6 @@ class ProductSmartPhonesController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -92,11 +87,10 @@ class ProductSmartPhonesController extends Controller
         }
         return view('admin.listAdmin.Product.SmartPhone.formProductPhone')->with([
             "product"=> $product,
-            "action"=>"smartphone/" . $product->id,
+            "action"=>"/smartphone/" . $product->id,
             "method"=>"PUT"
         ]) ;
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -110,7 +104,6 @@ class ProductSmartPhonesController extends Controller
         if ($product == null) {
             return view("errors.404");
         }
-
         $product->title = $request->get("title");
         $product->description = $request->get("description");
         $product->price = $request->get("price");
@@ -119,11 +112,9 @@ class ProductSmartPhonesController extends Controller
         if ($request->get("isAjax")) {
             return $product;
         } else {
-//            return redirect("admin/smartphone");
-            return 'succse';
+            return redirect("smartphone");
         }
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -136,6 +127,7 @@ class ProductSmartPhonesController extends Controller
         $user->delete();
         return redirect('smartphone');
     }
+}
 
 
     public function showPC()
