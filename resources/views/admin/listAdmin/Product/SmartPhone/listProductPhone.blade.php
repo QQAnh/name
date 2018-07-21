@@ -50,7 +50,7 @@
                                     <td>
                                         <a href="/admin/smartphone/{{$item->id}}/edit" id="putUser" class="fa fa-edit"> Edit</a> <p> </p>
 
-                                        <a href="#" id="delete-{{$item->id}}" class="fa fa-trash btn-delete"> Delete</a>
+                                        <a href="/admin/smartphone/{{$item->id}}/destroy" id="delete-{{$item->id}}" class="fa fa-trash btn-delete"> Delete</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -93,7 +93,7 @@
         $('.btn-delete').click(function () {
             deleteId = $(this).attr("id").replace('delete-', '');
             var name = $('#title-' + deleteId).text();
-            name = "Sản phẩm với tên là: '" + name + "'";
+            name = "Sản phẩm với tên là: '" + {{$item ->name}} + "'";
             $('#modalContent').text(name);
             $('#exampleModal').modal('show');
         });
