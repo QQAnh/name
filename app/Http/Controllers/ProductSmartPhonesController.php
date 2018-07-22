@@ -130,12 +130,20 @@ class ProductSmartPhonesController extends Controller
 
 
 
+
+
+
+
+
+
+
+
     public function showPC()
     {
         $product =Product::where('category','=',3)
             ->get();
 //        return response()->json($product, 200);
-        return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
+        return view('admin.listAdmin.Product.SmartPhone.listProductPC')->with('product',$product);
     }
     public function createPC()
     {
@@ -216,7 +224,7 @@ class ProductSmartPhonesController extends Controller
         $product =Product::where('category','=',2)
             ->get();
 //        return response()->json($product, 200);
-        return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
+        return view('admin.listAdmin.Product.SmartPhone.listProductLaptop')->with('product',$product);
     }
     public function createLaptop()
     {
@@ -296,7 +304,7 @@ class ProductSmartPhonesController extends Controller
         $product =Product::where('category','=',4)
             ->get();
 //        return response()->json($product, 200);
-        return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
+        return view('admin.listAdmin.Product.SmartPhone.listProductConsole')->with('product',$product);
     }
     public function createConsole()
     {
