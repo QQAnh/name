@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
 
-class ProductSmartPhonesController extends Controller
+class ProductConsoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +13,12 @@ class ProductSmartPhonesController extends Controller
      */
     public function index()
     {
-        $product = DB::table('products')
-            ->where('category','=',1)
+        $product =Product::where('category','=',4)
             ->get();
 //        return response()->json($product, 200);
         return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -29,12 +26,13 @@ class ProductSmartPhonesController extends Controller
      */
     public function create()
     {
-        return view('admin.listAdmin.Product.SmartPhone.formProductPhone')->with([
+        return view('admin.listAdmin.Product.Console.formProductConsole')->with([
             "product"=> new Product(),
-            "action"=>"/smartphone",
+            "action"=>"/console",
             "method"=>"POST"
         ]);
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -50,7 +48,7 @@ class ProductSmartPhonesController extends Controller
             'thumbnail' => 'required'
         ]);
         if ($validator->fails()) {
-            return redirect('smartphone/create')
+            return redirect('console/create')
                 ->withErrors($validator->errors())
                 ->withInput();
         }
@@ -59,10 +57,11 @@ class ProductSmartPhonesController extends Controller
         $product->description = $request->get("description");
         $product->price = $request->get("price");
         $product->thumbnail = $request->get("avatar2");
-        $product->category = 1;
+        $product->category = 4;
         $product->save();
-        return redirect('/smartphone');
+        return redirect('/console');
     }
+
     /**
      * Display the specified resource.
      *
@@ -71,8 +70,9 @@ class ProductSmartPhonesController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -85,12 +85,13 @@ class ProductSmartPhonesController extends Controller
         if ($product==null){
             return redirect("errors");
         }
-        return view('admin.listAdmin.Product.SmartPhone.formProductPhone')->with([
+        return view('admin.listAdmin.Product.Console.formProductConsole')->with([
             "product"=> $product,
-            "action"=>"/admin/smartphone/" . $product->id,
+            "action"=>"/admin/console/" . $product->id,
             "method"=>"PUT"
         ]) ;
     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -112,9 +113,10 @@ class ProductSmartPhonesController extends Controller
         if ($request->get("isAjax")) {
             return $product;
         } else {
-            return redirect("/admin/smartphone");
+            return redirect("/admin/console");
         }
     }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -123,33 +125,6 @@ class ProductSmartPhonesController extends Controller
      */
     public function destroy($id)
     {
-        $user = Product::find($id);
-        $user->delete();
-        return redirect('/admin/smartphone');
+        //
     }
-
-
-
-//    public function showPC()
-//    {
-//        $product =Product::where('category','=',3)
-//            ->get();
-////        return response()->json($product, 200);
-//        return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
-//    }
-//    public function showLaptop()
-//    {
-//        $product =Product::where('category','=',2)
-//            ->get();
-////        return response()->json($product, 200);
-//        return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
-//    }
-//    public function showConsole()
-//    {
-//        $product =Product::where('category','=',4)
-//            ->get();
-////        return response()->json($product, 200);
-//        return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
-//    }
-
 }
