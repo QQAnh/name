@@ -16,7 +16,7 @@ class ProductLaptopController extends Controller
         $product =Product::where('category','=',2)
             ->get();
 //        return response()->json($product, 200);
-        return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
+        return view('admin.listAdmin.Product.Laptop.listProductLaptop')->with('product',$product);
     }
 
     /**
