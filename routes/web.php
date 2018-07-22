@@ -47,6 +47,8 @@ Route::resource('/admin/smartphone','ProductSmartPhonesController');
 //Route::resource('/admin/pc','ProductPCController');
 //Route::resource('/admin/console','ProductConsoleController');
 //Route::resource('/admin/laptop','ProductLaptopController');
+Route::get('/admin/pc','ProductPCController@index');
+
 
 
 Route::get('/admin/pc','ProductSmartPhonesController@showPC');
