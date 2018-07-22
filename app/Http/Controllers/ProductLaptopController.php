@@ -13,7 +13,8 @@ class ProductLaptopController extends Controller
      */
     public function index()
     {
-        $product =Product::where('category','=',2)
+        $product = DB::table('products')
+            ->where('category','=',2)
             ->get();
 //        return response()->json($product, 200);
         return view('admin.listAdmin.Product.Laptop.listProductLaptop')->with('product',$product);

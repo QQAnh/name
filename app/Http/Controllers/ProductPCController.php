@@ -13,7 +13,8 @@ class ProductPCController extends Controller
      */
     public function index()
     {
-        $product =Product::where('category','=',3)
+        $product = DB::table('products')
+            ->where('category','=',3)
             ->get();
 //        return response()->json($product, 200);
         return view('admin.listAdmin.Product.PC.listProductPC')->with('product',$product);
