@@ -130,26 +130,26 @@ class ProductSmartPhonesController extends Controller
 
 
 
-//    public function showPC()
-//    {
-//        $product =Product::where('category','=',3)
-//            ->get();
-////        return response()->json($product, 200);
-//        return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
-//    }
-//    public function showLaptop()
-//    {
-//        $product =Product::where('category','=',2)
-//            ->get();
-////        return response()->json($product, 200);
-//        return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
-//    }
-//    public function showConsole()
-//    {
-//        $product =Product::where('category','=',4)
-//            ->get();
-////        return response()->json($product, 200);
-//        return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
-//    }
+    public function showPC()
+    {
+        $product =Product::where('category','=',3)
+            ->get();
+//        return response()->json($product, 200);
+        return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
+    }
+    public function showLaptop()
+    {
+        $product =Product::where('category','=',2)
+            ->get();
+//        return response()->json($product, 200);
+        return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
+    }
+    public function showConsole()
+    {
+        $product =Product::where('category','=',4)
+            ->get();
+//        return response()->json($product, 200);
+        return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
+    }
 
 }

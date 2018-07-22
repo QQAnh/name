@@ -44,14 +44,14 @@ Route::get('/admin', function (){
 Route::resource('user','AccountsController');
 Route::resource('/order','OrderController');
 Route::resource('/admin/smartphone','ProductSmartPhonesController');
-Route::resource('/admin/pc','ProductPCController');
-Route::resource('/admin/console','ProductConsoleController');
-Route::resource('/admin/laptop','ProductLaptopController');
+//Route::resource('/admin/pc','ProductPCController');
+//Route::resource('/admin/console','ProductConsoleController');
+//Route::resource('/admin/laptop','ProductLaptopController');
 
 
-//Route::get('/admin/pc','ProductSmartPhonesController@showPC');
-//Route::get('/admin/laptop','ProductSmartPhonesController@showLaptop');
-//Route::get('/admin/console','ProductSmartPhonesController@showConsole');
+Route::get('/admin/pc','ProductSmartPhonesController@showPC');
+Route::get('/admin/laptop','ProductSmartPhonesController@showLaptop');
+Route::get('/admin/console','ProductSmartPhonesController@showConsole');
 
 
 
