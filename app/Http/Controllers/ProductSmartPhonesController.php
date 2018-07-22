@@ -137,6 +137,80 @@ class ProductSmartPhonesController extends Controller
 //        return response()->json($product, 200);
         return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
     }
+    public function createPC()
+    {
+        return view('admin.listAdmin.Product.PC.formProductPC')->with([
+            "product"=> new Product(),
+            "action"=>"/pc",
+            "method"=>"POST"
+        ]);
+    }
+    public function storePC(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'title' => 'bail|required|unique:products|max:50',
+            'description' => 'required',
+            'price' => 'required',
+            'thumbnail' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return redirect('pc/create')
+                ->withErrors($validator->errors())
+                ->withInput();
+        }
+        $product = new Product();
+        $product->title = $request->get("title");
+        $product->description = $request->get("description");
+        $product->price = $request->get("price");
+        $product->thumbnail = $request->get("avatar2");
+        $product->category = 3;
+        $product->save();
+        return redirect('/pc');
+    }
+    public function editPC($id)
+    {
+        $product = Product::find($id);
+        if ($product==null){
+            return redirect("errors");
+        }
+        return view('admin.listAdmin.Product.PC.formProductPC')->with([
+            "product"=> $product,
+            "action"=>"/admin/pc/" . $product->id,
+            "method"=>"PUT"
+        ]) ;
+    }
+    public function updatePC(Request $request, $id)
+    {
+        $product = Product::find($id);
+        if ($product == null) {
+            return view("errors.404");
+        }
+        $product->title = $request->get("title");
+        $product->description = $request->get("description");
+        $product->price = $request->get("price");
+        $product->thumbnail = $request->get('avatar2');
+        $product->save();
+        if ($request->get("isAjax")) {
+            return $product;
+        } else {
+            return redirect("/admin/pc");
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function showLaptop()
     {
         $product =Product::where('category','=',2)
@@ -144,12 +218,144 @@ class ProductSmartPhonesController extends Controller
 //        return response()->json($product, 200);
         return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
     }
+    public function createLaptop()
+    {
+        return view('admin.listAdmin.Product.Laptop.formProductLaptop')->with([
+            "product"=> new Product(),
+            "action"=>"/laptop",
+            "method"=>"POST"
+        ]);
+    }
+    public function storeLaptop(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'title' => 'bail|required|unique:products|max:50',
+            'description' => 'required',
+            'price' => 'required',
+            'thumbnail' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return redirect('laptop/create')
+                ->withErrors($validator->errors())
+                ->withInput();
+        }
+        $product = new Product();
+        $product->title = $request->get("title");
+        $product->description = $request->get("description");
+        $product->price = $request->get("price");
+        $product->thumbnail = $request->get("avatar2");
+        $product->category = 2;
+        $product->save();
+        return redirect('/laptop');
+    }
+    public function editLaptop($id)
+    {
+        $product = Product::find($id);
+        if ($product==null){
+            return redirect("errors");
+        }
+        return view('admin.listAdmin.Product.Laptop.formProductLaptop')->with([
+            "product"=> $product,
+            "action"=>"/admin/laptop/" . $product->id,
+            "method"=>"PUT"
+        ]) ;
+    }
+    public function updateLaptop(Request $request, $id)
+    {
+        $product = Product::find($id);
+        if ($product == null) {
+            return view("errors.404");
+        }
+        $product->title = $request->get("title");
+        $product->description = $request->get("description");
+        $product->price = $request->get("price");
+        $product->thumbnail = $request->get('avatar2');
+        $product->save();
+        if ($request->get("isAjax")) {
+            return $product;
+        } else {
+            return redirect("/admin/laptop");
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function showConsole()
     {
         $product =Product::where('category','=',4)
             ->get();
 //        return response()->json($product, 200);
         return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
+    }
+    public function createConsole()
+    {
+        return view('admin.listAdmin.Product.Console.formProductConsole')->with([
+            "product"=> new Product(),
+            "action"=>"/console",
+            "method"=>"POST"
+        ]);
+    }
+    public function storeConsole(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'title' => 'bail|required|unique:products|max:50',
+            'description' => 'required',
+            'price' => 'required',
+            'thumbnail' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return redirect('console/create')
+                ->withErrors($validator->errors())
+                ->withInput();
+        }
+        $product = new Product();
+        $product->title = $request->get("title");
+        $product->description = $request->get("description");
+        $product->price = $request->get("price");
+        $product->thumbnail = $request->get("avatar2");
+        $product->category = 4;
+        $product->save();
+        return redirect('/console');
+    }
+    public function editConsole($id)
+    {
+        $product = Product::find($id);
+        if ($product==null){
+            return redirect("errors");
+        }
+        return view('admin.listAdmin.Product.Console.formProductConsole')->with([
+            "product"=> $product,
+            "action"=>"/admin/console/" . $product->id,
+            "method"=>"PUT"
+        ]) ;
+    }
+    public function updateConsole(Request $request, $id)
+    {
+        $product = Product::find($id);
+        if ($product == null) {
+            return view("errors.404");
+        }
+        $product->title = $request->get("title");
+        $product->description = $request->get("description");
+        $product->price = $request->get("price");
+        $product->thumbnail = $request->get('avatar2');
+        $product->save();
+        if ($request->get("isAjax")) {
+            return $product;
+        } else {
+            return redirect("/admin/console");
+        }
     }
 
 }

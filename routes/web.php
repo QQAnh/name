@@ -44,17 +44,33 @@ Route::get('/admin', function (){
 Route::resource('user','AccountsController');
 Route::resource('/order','OrderController');
 Route::resource('/admin/smartphone','ProductSmartPhonesController');
-Route::resource('/admin/pc','ProductPCController');
+//Route::resource('/admin/pc','ProductPCController');
 //Route::resource('/admin/console','ProductConsoleController');
 //Route::resource('/admin/laptop','ProductLaptopController');
-Route::get('/admin/pc','ProductPCController@index');
+//Route::get('/admin/pc','ProductPCController@index');
 
 
 
-//Route::get('/admin/pc','ProductSmartPhonesController@showPC');
+Route::get('/admin/pc','ProductSmartPhonesController@showPC');
+Route::post('/admin/pc','ProductSmartPhonesController@storePC');
+Route::get('/admin/pc/create','ProductSmartPhonesController@createPC');
+Route::get('/admin/pc/{id}/edit','ProductSmartPhonesController@editPC');
+Route::put('/admin/pc/{id}','ProductSmartPhonesController@updatePC');
+
+
 Route::get('/admin/laptop','ProductSmartPhonesController@showLaptop');
-Route::get('/admin/console','ProductSmartPhonesController@showConsole');
+Route::post('/admin/laptop','ProductSmartPhonesController@storeLaptop');
+Route::get('/admin/laptop/create','ProductSmartPhonesController@createLaptop');
+Route::get('/admin/laptop/{id}/edit','ProductSmartPhonesController@editLaptop');
+Route::put('/admin/laptop/{id}','ProductSmartPhonesController@updateLaptop');
 
+
+
+Route::get('/admin/console','ProductSmartPhonesController@showConsole');
+Route::post('/admin/console','ProductSmartPhonesController@storeConsole');
+Route::get('/admin/console/create','ProductSmartPhonesController@createConsole');
+Route::get('/admin/console/{id}/edit','ProductSmartPhonesController@editConsole');
+Route::put('/admin/console/{id}','ProductSmartPhonesController@updateConsole');
 
 
 
