@@ -9,14 +9,21 @@ class OrderDetail extends Model
     public $items = null;
     public $totalQty = 0;
     public $totalMoney = 0;
-    public function __construct($oldCart)
+
+    public function __construct()
     {
-        if ($oldCart) {
-            $this->items = $oldCart->items;
-            $this->totalQty = $oldCart->totalQty;
-            $this->totalMoney = $oldCart->totalMoney;
-        }
+
     }
+
+//    public function __construct($oldCart)
+//    {
+//        if ($oldCart) {
+//            $this->items = $oldCart->items;
+//            $this->totalQty = $oldCart->totalQty;
+//            $this->totalMoney = $oldCart->totalMoney;
+//        }
+//    }
+
     public function add($item, $id)
     {
         $storedItem = ['qty' => 0, 'price' => $item->price, 'item' => $item];
