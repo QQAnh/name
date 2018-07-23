@@ -43,6 +43,8 @@ Route::get('/admin', function (){
 //});
 Route::resource('user','AccountsController');
 Route::resource('/order','OrderController');
+Route::get('/orderDetail/{id}','OrderController@index2');
+
 Route::resource('/admin/smartphone','ProductSmartPhonesController');
 Route::get('/admin/smartphone/{id}/delete',function ($id){
     $product = \App\Product::find($id);

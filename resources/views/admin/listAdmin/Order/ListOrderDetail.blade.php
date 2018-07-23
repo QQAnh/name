@@ -37,17 +37,13 @@
                             <tbody id="demo-get">
                             </tbody>
                             <tbody >
-                            @foreach($order as $item )
+                            @foreach($order_detail as $item )
                                 <tr id="{{$item->id}}">
 
-                                    <td>{{$item->UserId}}</td>
-                                    <td>{{$item->nameReceiver}} </td>
-                                    <td>{{$item->phoneReceiver}}</td>
-                                    <td>{{$item->addressReceiver}}</td>
-                                    <td>{{$item->note}}</td>
-                                    <td>{{$item->totalMoney}} </td>động
+                                    <td>{{$item->orderId}} </td>
+
                                     <td>
-                                        <a href="/orderDetail/{{$item->id}}" id="putUser" class="fa fa-edit"> Xem chi tiết</a> <p> </p>
+                                        <a href="#" id="putUser" class="fa fa-edit"> Xem chi tiết</a> <p> </p>
                                     </td>
 
                                 </tr>
