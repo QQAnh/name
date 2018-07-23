@@ -91,7 +91,6 @@ Route::post('/admin/category',function (\Illuminate\Http\Request $request){
     $product = new \App\Category();
     $product->title = $request->get("title");
     $product->image_url = $request->get("avatar2");
-    $product->category = 1;
     $product->save();
     return redirect('/admin/category');
 });
