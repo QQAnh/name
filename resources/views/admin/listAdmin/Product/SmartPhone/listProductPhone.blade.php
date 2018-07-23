@@ -92,16 +92,16 @@
         var deleteId = '';
         $('.btn-delete').click(function () {
             deleteId = $(this).attr("id").replace('delete-', '');
-            var name = $('#title-' + deleteId).text();
-            name = "Sản phẩm với tên là: '" + name + "'";
-            $('#modalContent').text(name);
+            var title = $('#title-' + deleteId).text();
+            title = "Sản phẩm với tên là: '" + title + "'";
+            $('#modalContent').text(title);
             $('#exampleModal').modal('show');
         });
 
         $('#btnConfirmDelete').click(function () {
             $.ajax({
                 type: 'DELETE',
-                url: '/smartphone/' + deleteId,
+                url: '/admin/destroy/smartphone/' + deleteId,
                 data: {
                     "_token": "{{ csrf_token() }}",
                 },
@@ -118,7 +118,7 @@
                 }
             });
 
-        // });
+        });
 
         {{--var listDeleteButton = document.getElementsByClassName('fa fa-trash btn-delete');--}}
         {{--for (var i= 0; i<listDeleteButton;i++){--}}

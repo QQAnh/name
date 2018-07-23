@@ -85,5 +85,59 @@
     {{--</div>--}}
 
 @endsection
+@section('js')
+    <script>
+        var deleteId = '';
+        $('.btn-delete').click(function () {
+            deleteId = $(this).attr("id").replace('delete-', '');
+            var name = $('#title-' + deleteId).text();
+            name = "Sản phẩm với tên là: '" + name + "'";
+            $('#modalContent').text(name);
+            $('#exampleModal').modal('show');
+        });
+
+        $('#btnConfirmDelete').click(function () {
+            $.ajax({
+                type: 'DELETE',
+                url: '/destroy/category/' + deleteId,
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                },
+                success: function () {
+                    $('#messageSuccess').text('Action success!');
+                    $('#exampleModal').modal('hide');
+                    $('#messageSuccess').removeClass('d-none');
+                    $('#'.deleteId).hide();
+                },
+                error: function () {
+                    $('#messageError').removeClass('d-none');
+                    $('#messageError').text('Action fails! Please try again later!');
+                    $('#exampleModal').modal('hide');
+                }
+            });
+
+
+        });
+
+        {{--var listDeleteButton = document.getElementsByClassName('fa fa-trash btn-delete');--}}
+        {{--for (var i= 0; i<listDeleteButton;i++){--}}
+        {{--if (confirm("Xoa")){--}}
+        {{--var param = '_token={{csrf_token()}}';--}}
+        {{--var currentId = this.id;--}}
+        {{--var xhttp = new XMLHttpRequest();--}}
+        {{--xhttp.open("POST","admin/smartphone/destroy"+currentId,true);--}}
+        {{--xhttp.onreadystatechange = function () {--}}
+        {{--if (this.readyState == 4 && this.status ==200){--}}
+        {{--alert("succsess");--}}
+        {{--}--}}
+
+        {{--};--}}
+        {{--xhttp.setRequestHeader("conten-type","application/x-www-form-urlencoded");--}}
+        {{--xhttp.send(param);--}}
+        {{--}--}}
+        {{--}--}}
+    </script>
+    {{--<script src="{{asset('js/admin/listProduct.js')}}"></script>--}}
+@endsection
 
 
