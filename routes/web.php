@@ -75,7 +75,7 @@ Route::put('/admin/console/{id}','ProductSmartPhonesController@updateConsole');
 
 
 Route::get('/admin/category',function (){
-    $category = \Illuminate\Support\Facades\DB::table('categories')->get();
+    $category = \Illuminate\Support\Facades\DB::table('categories')->where('istatus',1)->get();
     return view('admin.listAdmin.Category.listCategory')->with('category',$category);
 });
 Route::post('/admin/category',function (\Illuminate\Http\Request $request){
