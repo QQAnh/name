@@ -149,7 +149,7 @@ class ProductSmartPhonesController extends Controller
     {
         return view('admin.listAdmin.Product.PC.formProductPC')->with([
             "product"=> new Product(),
-            "action"=>"/pc",
+            "action"=>"/admin/pc",
             "method"=>"POST"
         ]);
     }
@@ -162,7 +162,7 @@ class ProductSmartPhonesController extends Controller
             'thumbnail' => 'required'
         ]);
         if ($validator->fails()) {
-            return redirect('pc/create')
+            return redirect('/admin/pc/create')
                 ->withErrors($validator->errors())
                 ->withInput();
         }
@@ -173,7 +173,7 @@ class ProductSmartPhonesController extends Controller
         $product->thumbnail = $request->get("avatar2");
         $product->category = 3;
         $product->save();
-        return redirect('/pc');
+        return redirect('/admin/pc');
     }
     public function editPC($id)
     {
@@ -230,7 +230,7 @@ class ProductSmartPhonesController extends Controller
     {
         return view('admin.listAdmin.Product.Laptop.formProductLaptop')->with([
             "product"=> new Product(),
-            "action"=>"/laptop",
+            "action"=>"/admin/laptop",
             "method"=>"POST"
         ]);
     }
@@ -243,7 +243,7 @@ class ProductSmartPhonesController extends Controller
             'thumbnail' => 'required'
         ]);
         if ($validator->fails()) {
-            return redirect('laptop/create')
+            return redirect('/admin/laptop/create')
                 ->withErrors($validator->errors())
                 ->withInput();
         }
@@ -254,7 +254,7 @@ class ProductSmartPhonesController extends Controller
         $product->thumbnail = $request->get("avatar2");
         $product->category = 2;
         $product->save();
-        return redirect('/laptop');
+        return redirect('/admin/laptop');
     }
     public function editLaptop($id)
     {
@@ -310,7 +310,7 @@ class ProductSmartPhonesController extends Controller
     {
         return view('admin.listAdmin.Product.Console.formProductConsole')->with([
             "product"=> new Product(),
-            "action"=>"/console",
+            "action"=>"/admin/console",
             "method"=>"POST"
 
         ]);
@@ -324,7 +324,7 @@ class ProductSmartPhonesController extends Controller
             'thumbnail' => 'required'
         ]);
         if ($validator->fails()) {
-            return redirect('console/create')
+            return redirect('/admin/console/create')
                 ->withErrors($validator->errors())
                 ->withInput();
         }
@@ -335,7 +335,7 @@ class ProductSmartPhonesController extends Controller
         $product->thumbnail = $request->get("avatar2");
         $product->category = 4;
         $product->save();
-        return redirect('/console');
+        return redirect('/admin/console');
     }
     public function editConsole($id)
     {
