@@ -49,7 +49,7 @@ Route::get('/orderDetail/{id}',function ($id){
     $order_detail = OrderDetail::find($id);
     $productName = \App\Product::where('id',$order_detail->get('productId'))->get();
     $productPrice = \App\Product::where('id',$order_detail->get('productId'))->get();
-    $quatity = OrderDetail::where('id',$id)->get('quatity');
+    $quatity = OrderDetail::where('id',$id)->get();
 
     return view('admin.listAdmin.Order.ListOrderDetail')->with('order_detail',$order_detail)
         ->with('productName',$productName)
