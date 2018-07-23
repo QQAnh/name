@@ -148,8 +148,9 @@ class ProductSmartPhonesController extends Controller
 
     public function showPC()
     {
-        $product =Product::where('category','=',3)
+        $product1 =Product::where('category','=',3)
             ->get();
+        $product = $product1->where('status','=',1);
 //        return response()->json($product, 200);
         return view('admin.listAdmin.Product.PC.listProductPC')->with('product',$product);
     }
