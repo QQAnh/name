@@ -50,7 +50,7 @@ class ProductSmartPhonesController extends Controller
             'thumbnail' => 'required'
         ]);
         if ($validator->fails()) {
-            return redirect('smartphone/create')
+            return redirect('/admin/smartphone/create')
                 ->withErrors($validator->errors())
                 ->withInput();
         }
