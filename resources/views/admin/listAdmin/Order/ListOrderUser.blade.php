@@ -48,6 +48,15 @@
 
                                 </tr>
                             @endforeach
+                            @foreach($order_details as $product )
+                                <tr id="{{$product->id}}">
+
+                                    <td>{{$product->orderId}}</td>
+
+
+                                </tr>
+                            @endforeach
+
                             </tbody>
                         </table>
                     </div>

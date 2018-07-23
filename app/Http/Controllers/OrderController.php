@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use App\Order_detail;
+use App\OrderDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -24,12 +25,16 @@ class OrderController extends Controller
 //            ->select('orders.*','order_details.*','user_members.*','products.*')
 //            ->get();
         $order = Order::all();
+        $order_details = OrderDetail::where('orderId',$order->get('id'))->get();
+
 //        $id = $order->get('id');
 //        $order = DB::table('order_details')->where('id',$id)->get();
 //        $product = $order->get('productId');
 //        $product2 = DB::table('products')->where()->get('id',$product)->get();
 
-        return view('admin.listAdmin.Order.ListOrderUser')->with('order', $order);
+        return view('admin.listAdmin.Order.ListOrderUser')->with('order', $order)->with('order_details',$order_details);
+    }
+    public function index2(){
     }
 
     /**

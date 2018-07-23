@@ -92,6 +92,10 @@ class HomepageController extends Controller
         return redirect()->back();
     }
     public function getShopingCart(){
-
+        $oldCart = Session::get('OrderDetail');
+        $cart = new OrderDetail($oldCart);
+        return view('client.listClient.shopingCart',['products' => $cart->items,
+            'totalPrice'=>$cart->totalMoney, 'totalQty' =>$cart->totalQty
+        ]);
     }
 }
