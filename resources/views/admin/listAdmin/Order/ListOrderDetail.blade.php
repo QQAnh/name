@@ -36,6 +36,9 @@
                             <tbody >
                               <tr>
                                   <th>{{$order_detail->orderId}}</th>
+                                  <th>{{$productName}}</th>
+                                  <th>{{$quatity}}</th>
+                                  <th>{{$productPrice}}</th>
                               </tr>
                             </tbody>
                         </table>
