@@ -127,7 +127,7 @@ Route::put('/admin/category/{id}',function (\Illuminate\Http\Request $request,$i
     }
 });
 
-Route::post('/admin/category/destroy/{id}',function ($id){
+Route::delete('/admin/category/destroy/{id}',function ($id){
 
      $categoy =  \App\Category::destroy($id);
     return redirect("/admin/category");
