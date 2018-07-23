@@ -126,20 +126,17 @@ Route::put('/admin/category/{id}',function (\Illuminate\Http\Request $request,$i
         return redirect("/admin/category");
     }
 });
-
-Route::post('/admin/category/new/{id}',function (\Illuminate\Http\Request $request,$id){
+//
+Route::delete('/admin/category/destroy/{id}',function (\Illuminate\Http\Request $request,$id){
     $product = \App\Category::find($id);
     if ($product == null) {
         return view("errors.404");
     }
-    $product->istatus = 2;
-    $product->save();
-    if ($request->get("isAjax")) {
-        return $product;
-    } else {
+    $product->delete();
         return redirect("/admin/category");
-    }
+
 });
+
 
 
 
