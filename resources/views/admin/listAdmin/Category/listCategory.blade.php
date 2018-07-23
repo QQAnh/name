@@ -41,7 +41,7 @@
                                     </td>
 
                                     <td>
-                                        <a href="admin/user/{{$item->id}}/edit" id="putUser" class="fa fa-edit"> Edit</a> <p> </p>
+                                        {{--<a href="admin/user/{{$item->id}}/edit" id="putUser" class="fa fa-edit"> Edit</a> <p> </p>--}}
 
                                         <a href="#" id="delete-{{$item->id}}" class="fa fa-trash btn-delete"> Delete</a>
                                     </td>

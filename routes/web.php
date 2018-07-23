@@ -88,7 +88,10 @@ Route::get('/console','Client\HomepageController@getListConsole');
 
 
 
-Route::get('/admin/category','Admin\AdminController@listCategory');
+Route::get('/admin/category',function (){
+    $category = Category::all();
+    return view('admin.listAdmin.Category.listCategory')->with('category',$category);
+});
 
 
 
