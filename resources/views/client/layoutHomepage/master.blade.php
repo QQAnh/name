@@ -426,6 +426,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/register/create"> <i class="fa fa-key"></i> Đăng kí</a>
             </li>
+            <li class="col-md-6 font-weight-bold"><a href="/shoppingCart" class="text-secondary"><span class="text-success"><i class="fas fa-shopping-cart"></i></span>Giỏ hàng </a> @yield('shopingCart')</li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">

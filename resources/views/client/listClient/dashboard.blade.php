@@ -1,5 +1,9 @@
 @extends('client.layoutHomepage.master')
 @section('title', 'Chi tiết sản phẩm ')
+
+@section('shopingCart')
+    <span class="badge badge-primary badge-pill">{{Session::has('OrderDetail')? Session::get('OrderDetail')->totalQty :''}}</span>
+@endsection
 <style>
     .gallery-wrap .img-big-wrap img {
         height: 450px;
