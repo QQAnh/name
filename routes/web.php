@@ -66,12 +66,12 @@ Route::get('/admin/smartphone/{id}/delete',function ($id){
     }
     return view('admin.listAdmin.Product.SmartPhone.formSmartPhoneDelete')->with([
         "product"=> $product,
-        "action"=>"/admin/smartphone/" . $product->id,
+        "action"=>"/admin/smartphone/xoa/" . $product->id,
         "method"=>"PUT"
     ]) ;
 });
 //
-Route::put('/admin/smartphone/{id}',function (\Illuminate\Http\Request $request,$id){
+Route::put('/admin/smartphone/xoa/{id}',function (\Illuminate\Http\Request $request,$id){
     $product = \App\Product::find($id);
     if ($product == null) {
         return view("errors.404");
