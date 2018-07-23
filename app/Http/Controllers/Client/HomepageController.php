@@ -94,7 +94,7 @@ class HomepageController extends Controller
     public function getShopingCart(){
         $oldCart = Session::get('OrderDetail');
         $cart = new OrderDetail($oldCart);
-        return view('Client.ListPage.shopingCart',['products' => $cart->items,
+        return view('client.ListClient.shopingCart',['products' => $cart->items,
             'totalPrice'=>$cart->totalMoney, 'totalQty' =>$cart->totalQty
         ]);
     }
