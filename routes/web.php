@@ -44,6 +44,7 @@ Route::get('/admin', function (){
 Route::resource('user','AccountsController');
 Route::resource('/order','OrderController');
 Route::resource('/admin/smartphone','ProductSmartPhonesController');
+Route::post('admin/smartphone/destroy/{id}','ProductSmartPhonesController@destroy');
 //Route::resource('/admin/pc','ProductPCController');
 //Route::resource('/admin/console','ProductConsoleController');
 //Route::resource('/admin/laptop','ProductLaptopController');
