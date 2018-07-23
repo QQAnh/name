@@ -1,22 +1,17 @@
 @extends('admin.layoutAdmin.master')
-@section('title', 'List Laptop')
+@section('title', 'List Product')
 @section('content')
     <div class="row">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Table Product SmartPhone</h1>
+                <h1 class="page-header">Tables</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <div class="col-lg-12">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                   <ul class="nav nav-tabs " style="border-bottom: none">
-                       <li class="col-md-9">List Laptop</li>
-                       <li>
-                           <a href="/admin/laptop/create" style="padding: 0; color: white">Create new product</a>
-                       </li>
-                   </ul>
+                    List Product
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -24,31 +19,29 @@
                         <table class="table table-striped table-bordered table-hover">
                             <thead>
                             <tr>
-                                <th>#</th>
+                                <th>ID</th>
                                 <th>Image</th>
                                 <th>Title</th>
-                                <th>Description</th>
-                                <th>Price</th>
-                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody id="demo-get">
                             </tbody>
                             <tbody >
-                            @foreach($product as $item)
+                            @foreach($category as $item)
                                 <tr id="{{$item->id}}">
                                     <td>{{$item->id}}</td>
                                     <th class="col-md-2">
                                         <div class="card"
-                                             style="background-image: url('{{$item->thumbnail}}'); background-size: cover; width: 60px; height: 60px;">
+                                             style="background-image: url('{{$item->image_url}}'); background-size: cover; width: 60px; height: 60px;">
                                         </div>
                                         {{--<img src="" style=" with:60px; height: 60px" class="img-thumbnail">--}}
                                     </th>
-                                    <td id="title-{{$item->title}}">{{$item->title}}</td>
-                                    <td>{{$item->description}} </td>
-                                    <td>{{$item->price}}</td>
+                                    <td>{{$item->title}}</td>
                                     <td>
-                                        <a href="/admin/laptop/{{$item->id}}/edit" id="putUser" class="fa fa-edit"> Edit</a> <p> </p>
+                                    </td>
+
+                                    <td>
+                                        <a href="admin/user/{{$item->id}}/edit" id="putUser" class="fa fa-edit"> Edit</a> <p> </p>
 
                                         <a href="#" id="delete-{{$item->id}}" class="fa fa-trash btn-delete"> Delete</a>
                                     </td>
@@ -88,37 +81,5 @@
 @endsection
 
 @section('js')
-    <script>
-        var deleteId = '';
-        $('.btn-delete').click(function () {
-            deleteId = $(this).attr("id").replace('delete-', '');
-            var name = $('#title-' + deleteId).text();
-            name = "Sản phẩm với tên là: '" + name + "'";
-            $('#modalContent').text(name);
-            $('#exampleModal').modal('show');
-        });
-
-        $('#btnConfirmDelete').click(function () {
-            $.ajax({
-                type: 'DELETE',
-                url: '/smartphone/' + deleteId,
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                },
-                success: function () {
-                    $('#messageSuccess').text('Action success!');
-                    $('#exampleModal').modal('hide');
-                    $('#messageSuccess').removeClass('d-none');
-                    $('#'. deleteId).hide();
-                },
-                error: function () {
-                    $('#messageError').removeClass('d-none');
-                    $('#messageError').text('Action fails! Please try again later!');
-                    $('#exampleModal').modal('hide');
-                }
-            });
-
-        });
-    </script>
-    {{--<script src="{{asset('js/admin/listProduct.js')}}"></script>--}}
+    <script src="{{asset('js/admin/listProduct.js')}}"></script>
 @endsection

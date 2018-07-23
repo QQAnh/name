@@ -1,14 +1,20 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\UserMember;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
 class AdminController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('admin.listAdmin.dashboard');
     }
-    public function loginAdmin(){
+
+    public function loginAdmin()
+    {
         return view('admin.listAdmin.login');
     }
 //    public function listOrderUser(){
@@ -20,14 +26,17 @@ class AdminController extends Controller
 //            ->get();
 //        return view('admin.listAdmin.Order.OrderUser')->with('order',$order);
 //    }
-    public function searchPhone(Request $request){
+    public function searchPhone(Request $request)
+    {
         $key = $request->input('title');
-        $user = UserMember::where('fullname','like', '%'.$key.'%')
-            ->orwhere('phone', 'like','%'.$key.'%')
+        $user = UserMember::where('fullname', 'like', '%' . $key . '%')
+            ->orwhere('phone', 'like', '%' . $key . '%')
             ->get();
-        return view('admin.listAdmin.Product.listProduct')->with('user', $user) ;
+        return view('admin.listAdmin.Product.listProduct')->with('user', $user);
     }
-    public function demoSearch(){
+
+    public function demoSearch()
+    {
         return view('admin.listAdmin.Product.formProduct');
     }
 //    public function chart(){
@@ -41,4 +50,11 @@ class AdminController extends Controller
 //        return view('admin.listAdmin.User.FormUser');
 //    }
 //}
+    public function listCategory()
+    {
+        $category = DB::table('categories')->get();
+        return view('admin.listAdmin.Category.listCategory')->with('category',$category);
+
+
+    }
 }

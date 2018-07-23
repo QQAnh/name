@@ -1,5 +1,5 @@
 @extends('admin.layoutAdmin.master')
-@section('title', 'List SmartPhone')
+@section('title', 'List PC')
 @section('content')
     <div class="row">
         <div class="row">
@@ -12,7 +12,7 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">
                    <ul class="nav nav-tabs " style="border-bottom: none">
-                       <li class="col-md-9">List SmartPhone</li>
+                       <li class="col-md-9">List PC</li>
                        <li>
                            <a href="/admin/pc/create" style="padding: 0; color: white">Create new product</a>
                        </li>

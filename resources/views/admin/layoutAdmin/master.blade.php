@@ -111,6 +111,16 @@
                             </li>
                         </ul>
                     </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Category<span class="fa arrow"></span></a>
+
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/admin/smartphone"><i class="fa fa-edit fa-fw"></i>List Category</a>
+                            </li>
+                        </ul>
+                    </li>
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Order<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">

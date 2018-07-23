@@ -87,5 +87,10 @@ Route::get('/console','Client\HomepageController@getListConsole');
 
 
 
+
+Route:get('/admin/category','Admin\AdminController@listCategory');
+
+
+
 Route::get('/intro','Client\HomepageController@index3');
 Route::get('/contact','Client\HomepageController@index4');
