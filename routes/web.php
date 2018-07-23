@@ -15,6 +15,9 @@
 //    return view('welcome');
 //});
 
+use App\OrderDetail;
+use Illuminate\Support\Facades\Session;
+
 Auth::routes();
 
 Route::get('/','Client\HomepageController@index');
@@ -279,7 +282,13 @@ Route::get('/laptop','Client\HomepageController@getListLaptop');
 Route::get('/pc','Client\HomepageController@getListPC');
 Route::get('/console','Client\HomepageController@getListConsole');
 Route::get('/cart/{id}','Client\HomepageController@getAddCart');
-Route::get('/shoppingCart','Client\HomepageController@getShopingCart');
+Route::get('/shoppingCart',function (){
+    $oldCart = Session::get('OrderDetail');
+    $cart = new OrderDetail($oldCart);
+    return view('client.listClient.shopingCart',['products' => $cart->items,
+        'totalPrice'=>$cart->totalMoney, 'totalQty' =>$cart->totalQty
+    ]);
+});
 
 
 
