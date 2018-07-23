@@ -50,7 +50,7 @@
                                     <td>
                                         <a href="/admin/console/{{$item->id}}/edit" id="putUser" class="fa fa-edit"> Edit</a> <p> </p>
 
-                                        <a href="#" id="delete-{{$item->id}}" class="fa fa-trash btn-delete"> Delete</a>
+                                        <a href="/admin/console/{{$item->id}}/delete" id="putUser" class="fa fa-trash btn-delete"> Delete</a>
                                     </td>
                                 </tr>
                             @endforeach

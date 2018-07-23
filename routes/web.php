@@ -83,6 +83,32 @@ Route::post('/admin/pc','ProductSmartPhonesController@storePC');
 Route::get('/admin/pc/create','ProductSmartPhonesController@createPC');
 Route::get('/admin/pc/{id}/edit','ProductSmartPhonesController@editPC');
 Route::put('/admin/pc/{id}','ProductSmartPhonesController@updatePC');
+Route::get('/admin/pc/{id}/delete',function ($id){
+    $product = \App\Product::find($id);
+    if ($product==null){
+        return redirect("errors");
+    }
+    return view('admin.listAdmin.Product.PC.formPCDelete')->with([
+        "product"=> $product,
+        "action"=>"/admin/pc/" . $product->id,
+        "method"=>"PUT"
+    ]) ;
+});
+//
+Route::put('/admin/pc/{id}',function (\Illuminate\Http\Request $request,$id){
+    $product = \App\Product::find($id);
+    if ($product == null) {
+        return view("errors.404");
+    }
+    $product->status = 2;
+    $product->save();
+    if ($request->get("isAjax")) {
+        return $product;
+    } else {
+        return redirect("/admin/pc");
+    }
+
+});
 
 
 Route::get('/admin/laptop','ProductSmartPhonesController@showLaptop');
