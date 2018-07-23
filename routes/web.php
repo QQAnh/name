@@ -44,7 +44,9 @@ Route::get('/admin', function (){
 Route::resource('user','AccountsController');
 Route::resource('/order','OrderController');
 Route::resource('/admin/smartphone','ProductSmartPhonesController');
-Route::post('admin/smartphone/destroy/{id}','ProductSmartPhonesController@destroy');
+
+
+
 
 
 
@@ -126,6 +128,20 @@ Route::put('/admin/category/{id}',function (\Illuminate\Http\Request $request,$i
         return redirect("/admin/category");
     }
 });
+
+
+
+Route::get('/admin/category/{id}/delete',function ($id){
+    $product = \App\Category::find($id);
+    if ($product==null){
+        return redirect("errors");
+    }
+    return view('admin.listAdmin.Category.formCategoryDelete')->with([
+        "product"=> $product,
+        "action"=>"/admin/category/" . $product->id,
+        "method"=>"PUT"
+    ]) ;
+});
 //
 Route::put('/admin/category/{id}',function (\Illuminate\Http\Request $request,$id){
     $product = \App\Category::find($id);
@@ -141,6 +157,7 @@ Route::put('/admin/category/{id}',function (\Illuminate\Http\Request $request,$i
     }
 
 });
+
 
 
 
