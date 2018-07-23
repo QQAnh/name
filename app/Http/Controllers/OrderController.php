@@ -32,7 +32,7 @@ class OrderController extends Controller
 //        $product = $order->get('productId');
 //        $product2 = DB::table('products')->where()->get('id',$product)->get();
 
-        return view('admin.listAdmin.Order.ListOrderUser')->with('order', $order)->with('order_details',$order_details);
+        return view('admin.listAdmin.Order.ListOrderUser')->with('order', $order);
     }
     public function index2(){
     }
