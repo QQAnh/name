@@ -38,13 +38,13 @@
                             @foreach($category as $item)
                                 <tr id="{{$item->id}}">
                                     <td>{{$item->id}}</td>
-                                    {{--<th class="col-md-2">--}}
-                                        {{--<div class="card"--}}
-                                             {{--style="background-image: url('{{$item->thumbnail}}'); background-size: cover; width: 60px; height: 60px;">--}}
-                                        {{--</div>--}}
-                                        {{--<img src="" style=" with:60px; height: 60px" class="img-thumbnail">--}}
-                                    {{--</th>--}}
-                                    {{--<td id="title-{{$item->title}}">{{$item->title}}</td>--}}
+                                    <th class="col-md-2">
+                                        <div class="card"
+                                             style="background-image: url('{{$item->image_url}}'); background-size: cover; width: 60px; height: 60px;">
+                                        </div>
+                                        <img src="" style=" with:60px; height: 60px" class="img-thumbnail">
+                                    </th>
+                                    <td id="title-{{$item->title}}">{{$item->title}}</td>
                                     {{--<td>{{$item->description}} </td>--}}
                                     {{--<td>{{$item->price}}</td>--}}
                                     {{--<td>--}}
