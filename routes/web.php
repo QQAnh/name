@@ -278,6 +278,7 @@ Route::get('/smartphone','Client\HomepageController@getListSmartPhone');
 Route::get('/laptop','Client\HomepageController@getListLaptop');
 Route::get('/pc','Client\HomepageController@getListPC');
 Route::get('/console','Client\HomepageController@getListConsole');
+Route::get('/cart/{id}','Client\HomepageController@getAddCart');
 
 
 

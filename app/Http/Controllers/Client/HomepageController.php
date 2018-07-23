@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Client;
 
 use App\Category;
+use App\OrderDetail;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 
 class HomepageController extends Controller
@@ -79,5 +81,21 @@ class HomepageController extends Controller
     {
         $category = Category::all();
         return view('client.listClient.contact')->with('category', $category);
+    }
+    public function getAddCart(Request $request, $id){
+        $product = Product::find($id);
+        $oldCart = Session::has('OrderDetail')? Session::get('OrderDetail'):null;
+        $cart = new OrderDetail($oldCart);
+        $cart->add($product, $product->id);
+        $request->session()->put('OrderDetail',$cart);
+//        dd($request->session()->get('OrderDetail'));
+        return redirect()->back();
+    }
+    public function getShopingCart(){
+        $oldCart = Session::get('OrderDetail');
+        $cart = new OrderDetail($oldCart);
+        return view('Client.ListPage.shopingCart',['products' => $cart->items,
+            'totalPrice'=>$cart->totalMoney, 'totalQty' =>$cart->totalQty
+        ]);
     }
 }
