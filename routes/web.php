@@ -127,7 +127,7 @@ Route::put('/admin/category/{id}',function (\Illuminate\Http\Request $request,$i
     }
 });
 
-Route::put('/admin/category/new/{id}',function (\Illuminate\Http\Request $request,$id){
+Route::post('/admin/category/new/{id}',function (\Illuminate\Http\Request $request,$id){
     $product = \App\Category::find($id);
     if ($product == null) {
         return view("errors.404");
