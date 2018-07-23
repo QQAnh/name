@@ -116,6 +116,33 @@ Route::post('/admin/laptop','ProductSmartPhonesController@storeLaptop');
 Route::get('/admin/laptop/create','ProductSmartPhonesController@createLaptop');
 Route::get('/admin/laptop/{id}/edit','ProductSmartPhonesController@editLaptop');
 Route::put('/admin/laptop/{id}','ProductSmartPhonesController@updateLaptop');
+Route::get('/admin/laptop/{id}/delete',function ($id){
+    $product = \App\Product::find($id);
+    if ($product==null){
+        return redirect("errors");
+    }
+    return view('admin.listAdmin.Product.Laptop.formLaptopDelete')->with([
+        "product"=> $product,
+        "action"=>"/admin/laptop/" . $product->id,
+        "method"=>"PUT"
+    ]) ;
+});
+//
+Route::put('/admin/laptop/{id}',function (\Illuminate\Http\Request $request,$id){
+    $product = \App\Product::find($id);
+    if ($product == null) {
+        return view("errors.404");
+    }
+    $product->status = 2;
+    $product->save();
+    if ($request->get("isAjax")) {
+        return $product;
+    } else {
+        return redirect("/admin/laptop");
+    }
+
+});
+
 
 
 
@@ -124,6 +151,32 @@ Route::post('/admin/console','ProductSmartPhonesController@storeConsole');
 Route::get('/admin/console/create','ProductSmartPhonesController@createConsole');
 Route::get('/admin/console/{id}/edit','ProductSmartPhonesController@editConsole');
 Route::put('/admin/console/{id}','ProductSmartPhonesController@updateConsole');
+Route::get('/admin/console/{id}/delete',function ($id){
+    $product = \App\Product::find($id);
+    if ($product==null){
+        return redirect("errors");
+    }
+    return view('admin.listAdmin.Product.Console.formConsoleDelete')->with([
+        "product"=> $product,
+        "action"=>"/admin/console/" . $product->id,
+        "method"=>"PUT"
+    ]) ;
+});
+//
+Route::put('/admin/console/{id}',function (\Illuminate\Http\Request $request,$id){
+    $product = \App\Product::find($id);
+    if ($product == null) {
+        return view("errors.404");
+    }
+    $product->status = 2;
+    $product->save();
+    if ($request->get("isAjax")) {
+        return $product;
+    } else {
+        return redirect("/admin/console");
+    }
+
+});
 
 
 
