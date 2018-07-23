@@ -27,9 +27,7 @@
                                 <th>#</th>
                                 <th>Image</th>
                                 <th>Title</th>
-                                <th>Description</th>
-                                <th>Price</th>
-                                <th>Action</th>
+
                             </tr>
                             </thead>
                             <tbody id="demo-get">
@@ -39,10 +37,10 @@
                                 <tr id="{{$item->id}}">
                                     <td>{{$item->id}}</td>
                                     <th class="col-md-2">
-                                        <div class="card"
-                                             style="background-image: url('{{$item->image_url}}'); background-size: cover; width: 60px; height: 60px;">
-                                        </div>
-                                        <img src="" style=" with:60px; height: 60px" class="img-thumbnail">
+                                        {{--<div class="card"--}}
+                                             {{--style="background-image: url('{{$item->image_url}}'); background-size: cover; width: 60px; height: 60px;">--}}
+                                        {{--</div>--}}
+                                        <img src="{{$item->image_url}}" style=" with:60px; height: 60px" class="img-thumbnail">
                                     </th>
                                     <td id="title-{{$item->title}}">{{$item->title}}</td>
                                     {{--<td>{{$item->description}} </td>--}}
