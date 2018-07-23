@@ -35,23 +35,23 @@
                             <tbody id="demo-get">
                             </tbody>
                             <tbody >
-                            @foreach($product as $item)
+                            @foreach($category as $item)
                                 <tr id="{{$item->id}}">
                                     <td>{{$item->id}}</td>
-                                    <th class="col-md-2">
-                                        <div class="card"
-                                             style="background-image: url('{{$item->thumbnail}}'); background-size: cover; width: 60px; height: 60px;">
-                                        </div>
+                                    {{--<th class="col-md-2">--}}
+                                        {{--<div class="card"--}}
+                                             {{--style="background-image: url('{{$item->thumbnail}}'); background-size: cover; width: 60px; height: 60px;">--}}
+                                        {{--</div>--}}
                                         {{--<img src="" style=" with:60px; height: 60px" class="img-thumbnail">--}}
-                                    </th>
-                                    <td id="title-{{$item->title}}">{{$item->title}}</td>
-                                    <td>{{$item->description}} </td>
-                                    <td>{{$item->price}}</td>
-                                    <td>
-                                        <a href="/admin/smartphone/{{$item->id}}/edit" id="putUser" class="fa fa-edit"> Edit</a> <p> </p>
+                                    {{--</th>--}}
+                                    {{--<td id="title-{{$item->title}}">{{$item->title}}</td>--}}
+                                    {{--<td>{{$item->description}} </td>--}}
+                                    {{--<td>{{$item->price}}</td>--}}
+                                    {{--<td>--}}
+                                        {{--<a href="/admin/smartphone/{{$item->id}}/edit" id="putUser" class="fa fa-edit"> Edit</a> <p> </p>--}}
 
-                                        <a href="/admin/smartphone/destroy/{{$item->id}}" id="delete-{{$item->id}}" class="fa fa-trash btn-delete"> Delete</a>
-                                    </td>
+                                        {{--<a href="/admin/smartphone/destroy/{{$item->id}}" id="delete-{{$item->id}}" class="fa fa-trash btn-delete"> Delete</a>--}}
+                                    {{--</td>--}}
                                 </tr>
                             @endforeach
                             </tbody>
