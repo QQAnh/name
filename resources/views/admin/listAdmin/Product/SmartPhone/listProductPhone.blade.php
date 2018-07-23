@@ -120,7 +120,7 @@
 
         // });
 
-        var listDeleteButton = document.getElementsByClassName('fa fa-trash btn-delete');
+        var listDeleteButton = document.getElementsByClassName('btn-delete');
         for (var i= 0; i<listDeleteButton;i++){
             if (confirm("Xoa")){
                 var param = '_token={{csrf_token()}}';
