@@ -48,6 +48,14 @@ Route::get('/orderDetail/{id}',function ($id){
     return view('admin.listAdmin.Order.ListOrderDetail')->with('order_detail',$order_detail);
 });
 
+Route::get('/orderDetailHallo/{id}',function ($id){
+    $order_detail = \App\OrderDetail::find($id);
+    return $order_detail;
+});
+
+Route::get('/orderDetailHello/{id}',function ($id){
+    return 'Yolo;
+});
 
 
 
