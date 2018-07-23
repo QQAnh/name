@@ -45,10 +45,7 @@ Route::resource('user','AccountsController');
 Route::resource('/order','OrderController');
 Route::resource('/admin/smartphone','ProductSmartPhonesController');
 Route::post('admin/smartphone/destroy/{id}','ProductSmartPhonesController@destroy');
-//Route::resource('/admin/pc','ProductPCController');
-//Route::resource('/admin/console','ProductConsoleController');
-//Route::resource('/admin/laptop','ProductLaptopController');
-//Route::get('/admin/pc','ProductPCController@index');
+
 
 
 
@@ -75,8 +72,7 @@ Route::put('/admin/console/{id}','ProductSmartPhonesController@updateConsole');
 
 
 
-//Route::get('get-form',['uses'=> 'Client\loginController@getLogin']);
-//Route::post('handle-form',['uses'=> 'Client\loginController@handleRequest']);
+
 
 
 
