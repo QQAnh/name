@@ -37,7 +37,7 @@ class OrderController extends Controller
         $order = Order::find($id)->get('id');
         $order_detail = OrderDetail::where('orderId' ,'=' , $order)->get();
 
-        return view('admin.listAdmin.Order.ListOrderDetail')->with('$order_detail',$order_detail);
+        return view('admin.listAdmin.Order.ListOrderDetail')->with('order_detail',$order_detail);
     }
 
     /**
