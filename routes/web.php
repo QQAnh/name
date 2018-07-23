@@ -74,65 +74,36 @@ Route::put('/admin/console/{id}','ProductSmartPhonesController@updateConsole');
 
 
 
-Route::get('/admin/category',function (){
-    $category = \Illuminate\Support\Facades\DB::table('categories')->get();
-    return view('admin.listAdmin.Category.listCategory')->with('category',$category);
-});
-Route::post('/admin/category',function (\Illuminate\Http\Request $request){
-    $validator = Validator::make($request->all(), [
-        'title' => 'bail|required|unique:products|max:50',
-        'thumbnail' => 'required'
-    ]);
-    if ($validator->fails()) {
-        return redirect('/admin/category/create')
-            ->withErrors($validator->errors())
-            ->withInput();
-    }
-    $product = new \App\Category();
-    $product->title = $request->get("title");
-    $product->image_url = $request->get("avatar2");
-    $product->save();
-    return redirect('/admin/category');
-});
-Route::get('/admin/category/create',function (){
-    return view('admin.listAdmin.Category.formCategory')->with([
-        "product"=> new \App\Category(),
-        "action"=>"/admin/category",
-        "method"=>"POST"
-    ]);
-});
-Route::get('/admin/category/{id}/edit',function ($id){
-    $product = \App\Category::find($id);
-    if ($product==null){
-        return redirect("errors");
-    }
-    return view('admin.listAdmin.Category.formCategory')->with([
-        "product"=> $product,
-        "action"=>"/admin/category/" . $product->id,
-        "method"=>"PUT"
-    ]) ;
-});
-Route::put('/admin/category/{id}',function (\Illuminate\Http\Request $request,$id){
-    $product = \App\Category::find($id);
-    if ($product == null) {
-        return view("errors.404");
-    }
-    $product->title = $request->get("title");
-    $product->image_url = $request->get('avatar2');
-    $product->save();
-    if ($request->get("isAjax")) {
-        return $product;
-    } else {
-        return redirect("/admin/category");
-    }
-});
-
-Route::post('/admin/category/destroy/{id}',function ($id){
-
-     $categoy =  \App\Category::find($id);
-     $categoy->delete();
-    return redirect("/admin/category");
-});
+//Route::get('/admin/category',function (){
+//
+//});
+//Route::post('/admin/category',function (\Illuminate\Http\Request $request){
+//
+//});
+//Route::get('/admin/category/create',function (){
+//    return view('admin.listAdmin.Category.formCategory')->with([
+//        "product"=> new \App\Category(),
+//        "action"=>"/admin/category",
+//        "method"=>"POST"
+//    ]);
+//});
+//Route::get('/admin/category/{id}/edit',function ($id){
+//    $product = \App\Category::find($id);
+//    if ($product==null){
+//        return redirect("errors");
+//    }
+//    return view('admin.listAdmin.Category.formCategory')->with([
+//        "product"=> $product,
+//        "action"=>"/admin/category/" . $product->id,
+//        "method"=>"PUT"
+//    ]) ;
+//});
+//Route::put('/admin/category/{id}',function (\Illuminate\Http\Request $request,$id){
+//
+//});
+//
+//Route::post('/admin/category/destroy/{id}','');
+Route::resource('/admin/category','CategoriesController');
 
 
 
