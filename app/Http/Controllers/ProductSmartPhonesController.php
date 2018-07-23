@@ -312,6 +312,7 @@ class ProductSmartPhonesController extends Controller
             "product"=> new Product(),
             "action"=>"/console",
             "method"=>"POST"
+
         ]);
     }
     public function storeConsole(Request $request)
