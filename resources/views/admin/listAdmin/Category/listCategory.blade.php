@@ -48,11 +48,7 @@
                                     {{--<td>{{$item->price}}</td>--}}
                                     <td>
                                         <a href="/admin/category/{{$item->id}}/edit" id="putUser" class="fa fa-edit"> Edit</a> <p> </p>
-                                        <form method="post" action="/admin/category/destroy/{{$item->id}}">
-                                            {{csrf_token()}}
-                                            <input type="hidden" name="_method" value="DELETE">
-                                            <button type="submit">delete</button>
-                                        </form>
+                                        <a href="/admin/category/{{$item->id}}/new" id="putUser" class="fa fa-trash btn-delete"> Delete</a>
                                     </td>
                                 </tr>
                             @endforeach
