@@ -49,7 +49,6 @@
                                     <td>
                                         <a href="/admin/category/{{$item->id}}/edit" id="putUser" class="fa fa-edit"> Edit</a> <p> </p>
                                         <form method="post" action="/admin/category/destroy/{{$item->id}}">
-                                            {!! Form::token() !!}
                                             <input type="hidden" name="_method" value="DELETE">
                                             <button type="submit">delete</button>
                                         </form>
