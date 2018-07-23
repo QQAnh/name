@@ -64,7 +64,7 @@ Route::get('/admin/smartphone/{id}/delete',function ($id){
     if ($product==null){
         return redirect("errors");
     }
-    return view('admin.listAdmin.Product.formSmartPhoneDelete')->with([
+    return view('admin.listAdmin.Product.SmartPhone.formSmartPhoneDelete')->with([
         "product"=> $product,
         "action"=>"/admin/smartphone/" . $product->id,
         "method"=>"PUT"
