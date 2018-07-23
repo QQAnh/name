@@ -45,11 +45,11 @@
                                     <td id="title-{{$item->title}}">{{$item->title}}</td>
                                     {{--<td>{{$item->description}} </td>--}}
                                     {{--<td>{{$item->price}}</td>--}}
-                                    {{--<td>--}}
-                                        {{--<a href="/admin/smartphone/{{$item->id}}/edit" id="putUser" class="fa fa-edit"> Edit</a> <p> </p>--}}
+                                    <td>
+                                        <a href="/admin/category/{{$item->id}}/edit" id="putUser" class="fa fa-edit"> Edit</a> <p> </p>
 
-                                        {{--<a href="/admin/smartphone/destroy/{{$item->id}}" id="delete-{{$item->id}}" class="fa fa-trash btn-delete"> Delete</a>--}}
-                                    {{--</td>--}}
+                                        <a href="/admin/category/destroy/{{$item->id}}" id="delete-{{$item->id}}" class="fa fa-trash btn-delete"> Delete</a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

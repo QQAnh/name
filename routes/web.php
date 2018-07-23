@@ -101,6 +101,31 @@ Route::get('/admin/category/create',function (){
         "method"=>"POST"
     ]);
 });
+Route::get('/admin/category/{id}/edit',function ($id){
+    $product = \App\Category::find($id);
+    if ($product==null){
+        return redirect("errors");
+    }
+    return view('admin.listAdmin.Category.formCategory')->with([
+        "product"=> $product,
+        "action"=>"/admin/category/" . $product->id,
+        "method"=>"PUT"
+    ]) ;
+});
+Route::put('/admin/category/{id}',function (\Illuminate\Http\Request $request,$id){
+    $product = \App\Category::find($id);
+    if ($product == null) {
+        return view("errors.404");
+    }
+    $product->title = $request->get("title");
+    $product->image_url = $request->get('avatar2');
+    $product->save();
+    if ($request->get("isAjax")) {
+        return $product;
+    } else {
+        return redirect("/admin/category");
+    }
+});
 
 
 
