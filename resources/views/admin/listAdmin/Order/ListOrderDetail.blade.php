@@ -25,9 +25,8 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Product Name</th>
+                                <th>Product ID</th>
                                 <th>Quantity</th>
-                                <th>Price</th>
 
                             </tr>
                             </thead>
@@ -36,9 +35,8 @@
                             <tbody >
                               <tr>
                                   <th>{{$order_detail->orderId}}</th>
-                                  {{--<th>{{$productName->title}}</th>--}}
+                                  <th>{{$order_detail->productId}}</th>
                                   <th>{{$order_detail->quantity}}</th>
-                                  {{--<th>{{$productPrice->price}}</th>--}}
                               </tr>
                             </tbody>
                         </table>
