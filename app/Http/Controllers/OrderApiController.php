@@ -38,52 +38,31 @@ class OrderApiController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-            $userJson = $request->json()->all();
-//            $validator = Validator::make($userJson, [
-//                'nameBuyes' => 'required|unique:orders|max:50',
-//                'nameReceiver' => 'required',
-//                'addressReceiver' => 'required',
-//                'phoneBuyes' => 'required',
-//                'phoneReceiver' => 'required',
-//                'totalMoney' => 'required',
-//                'note' => 'required',
-//                'UserId'=>'required',
-//            ]);
-//            if ($validator->fails()) {
-//                return response()->json($validator->errors(), 400);
-//
-//            }
-            $productJson = $request->json()->all();
+        $jsonRequest = $request->json()->all();
+
+        try{
+//            DB::beginTransaction();
             $order = new Order();
-            $order->nameBuyes = $productJson['nameBuyes'];
-
-            $order->nameReceiver = $productJson['nameReceiver'];
-
-            $order->addressReceiver = $productJson['addressReceiver'];
-
-            $order->phoneBuyes = $productJson['phoneBuyes'];
-
-            $order->phoneReceiver = $productJson['phoneReceiver'];
-
-            $order->totalMoney = $productJson['totalMoney'];
-
-            $order->note = $productJson['note'];
-
-            $order->UserId = $productJson['UserId'];
-
-//            for ($i =0 ;$i <  ){
-//
-//            }
-
-//            $order->created_at = $productJson['created_at'];
-//
-//            $order->updated_at = $productJson['updated_at'];
+            $order->UserId = $jsonRequest['userId'];
+            $order->nameBuyes = $jsonRequest['nameBuyer'];
+            $order->phoneBuyes = $jsonRequest['phoneBuyer'];
+            $order->nameReceiver = $jsonRequest['name'];
+            $order->phoneReceiver = $jsonRequest['phone'];
+            $order->addressReceiver = $jsonRequest['address'];
+            $order->totalMoney = $jsonRequest['total'];
+            $order->note = $jsonRequest['note'];
             $order->save();
-            return response()->json($productJson, 201);
-
-        } catch (EXCEPTION $exception) {
-            return response()->json('error');
+            $list_order_details = $jsonRequest['list_Order'];
+            for ($i=0; $i < count($list_order_details); $i++){
+                $order_detail = new OrderDetail();
+                $order_detail -> orderId = $order->id;
+                $order_detail -> productId = $list_order_details[$i]['ProductId'];
+                $order_detail -> quantity = $list_order_details[$i]['Quantity'];
+                $order_detail -> save();
+            }
+//            DB::commit();
+        }catch (EXCEPTION $exception) {
+//            DB::rollback();
         }
     }
 
