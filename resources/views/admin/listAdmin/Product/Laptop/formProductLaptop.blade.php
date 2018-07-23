@@ -105,5 +105,5 @@
 
     <script src="{{asset('vendor-admin/datatables-responsive/dataTables.responsive.js')}}"> </script>
 
-    <script src="{{asset('js/admin/formUser.js')}}"> </script>
+    <script src="{{asset('js/admin/formProduct.js')}}"> </script>
 @endsection

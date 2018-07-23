@@ -61,7 +61,7 @@ class ProductSmartPhonesController extends Controller
         $product->thumbnail = $request->get("avatar2");
         $product->category = 1;
         $product->save();
-        return redirect('/smartphone');
+        return redirect('/admin/smartphone');
     }
     /**
      * Display the specified resource.
