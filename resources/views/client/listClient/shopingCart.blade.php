@@ -32,4 +32,10 @@
 
                 </tbody>
             </table>
+            <span>{{$totalQty}}</span>
+            <span>{{$totalPrice}}</span>
+        </div>
+    </div>
+
+
 @endsection
