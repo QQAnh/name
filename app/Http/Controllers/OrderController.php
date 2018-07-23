@@ -17,13 +17,14 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $order = DB::table('orders')
-            ->join('order_details','orders.orderDetailsId','=','order_details.id')
-            ->join('user_members','orders.UserId','=','user_members.id')
-            ->join('products','order_details.productId','=','products.id')
-            ->select('orders.*','order_details.*','user_members.*','products.*')
-            ->get();
-//        $order = Order::all();
+//        $order = DB::table('orders')
+//            ->join('order_details','orders.orderDetailsId','=','order_details.id')
+//            ->join('user_members','orders.UserId','=','user_members.id')
+//            ->join('products','order_details.productId','=','products.id')
+//            ->select('orders.*','order_details.*','user_members.*','products.*')
+//            ->get();
+        $order = Order::all();
+//        $order1 = $order->get('')
         return view('admin.listAdmin.Order.ListOrderUser')->with('order', $order);
     }
 
