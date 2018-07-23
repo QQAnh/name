@@ -44,8 +44,20 @@ Route::get('/admin', function (){
 Route::resource('user','AccountsController');
 Route::resource('/order','OrderController');
 Route::resource('/admin/smartphone','ProductSmartPhonesController');
-Route::put('/admin/smartphone/{id}',function ( \Illuminate\Http\Request $request,$id){
-    $product = Product::find($id);
+Route::get('/admin/smartphone/{id}/delete',function ($id){
+    $product = \App\Product::find($id);
+    if ($product==null){
+        return redirect("errors");
+    }
+    return view('admin.listAdmin.Product.formSmartPhoneDelete')->with([
+        "product"=> $product,
+        "action"=>"/admin/smartphone/" . $product->id,
+        "method"=>"PUT"
+    ]) ;
+});
+//
+Route::put('/admin/smartphone/{id}',function (\Illuminate\Http\Request $request,$id){
+    $product = \App\Product::find($id);
     if ($product == null) {
         return view("errors.404");
     }
@@ -56,17 +68,7 @@ Route::put('/admin/smartphone/{id}',function ( \Illuminate\Http\Request $request
     } else {
         return redirect("/admin/smartphone");
     }
-});
-Route::get('/admin/smartphone/{id}/delete',function ($id){
-    $product = Product::find($id);
-    if ($product==null){
-        return redirect("errors");
-    }
-    return view('admin.listAdmin.Product.SmartPhone.formSmartPhoneDelete')->with([
-        "product"=> $product,
-        "action"=>"/admin/smartphone/" . $product->id,
-        "method"=>"PUT"
-    ]) ;
+
 });
 
 
