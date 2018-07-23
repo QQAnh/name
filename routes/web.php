@@ -58,6 +58,10 @@ Route::get('/orderDetailHello/{id}',function ($id){
     return 'Yolo';
 });
 
+Route::get('/orderDetailHillo/{id}',function ($id){
+    return view('admin.listAdmin.Order.ListOrderDetail')->with('order_detail',new \App\OrderDetail());
+});
+
 
 
 
