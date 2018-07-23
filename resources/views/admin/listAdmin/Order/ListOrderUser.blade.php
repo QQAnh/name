@@ -30,6 +30,7 @@
                                 <th>Address Receiver</th>
                                 <th>Note</th>
                                 <th>Total Money (VND)</th>
+                                <th> Hành  </th>
 
                             </tr>
                             </thead>
@@ -44,7 +45,10 @@
                                     <td>{{$item->phoneReceiver}}</td>
                                     <td>{{$item->addressReceiver}}</td>
                                     <td>{{$item->note}}</td>
-                                    <td>{{$item->totalMoney}} </td>
+                                    <td>{{$item->totalMoney}} </td>động
+                                    <td>
+                                        <a href="" id="putUser" class="fa fa-edit"> Xem chi tiết</a> <p> </p>
+                                    </td>
 
                                 </tr>
                             @endforeach
