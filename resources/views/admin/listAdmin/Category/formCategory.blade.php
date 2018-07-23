@@ -34,7 +34,7 @@
                         @endif
                         {{ csrf_field() }}
                         <div class="form-group row fullname-group">
-                            <label class="col-md-2 col-form-label text-right">Title hihi</label>
+                            <label class="col-md-2 col-form-label text-right">Title </label>
                             <div class="col-md-8">
                                 <input type="text" class="form-control" name="title" value="{{$product->title}}" id="title" placeholder="Nhập tên sản phẩm" >
                                 {{--<div class="fullname-icon-err">--}}
