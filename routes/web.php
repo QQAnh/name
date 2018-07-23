@@ -85,9 +85,12 @@ Route::get('/console','Client\HomepageController@getListConsole');
 
 
 
-Route::get('/admin/category',function (){
-    $category = Category::all();
-    return view('admin.listAdmin.SmartPhone.listProductPhone')->with('category',$category);
+//Route::get('/admin/category',function (){
+//    $category = Category::all();
+//    return view('admin.listAdmin.SmartPhone.listProductPhone')->with('category',$category);
+//});
+Route::get('hello',function (){
+   return "hello";
 });
 
 

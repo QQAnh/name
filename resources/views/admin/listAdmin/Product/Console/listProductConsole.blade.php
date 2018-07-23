@@ -101,7 +101,7 @@
         $('#btnConfirmDelete').click(function () {
             $.ajax({
                 type: 'DELETE',
-                url: '/smartphone/' + deleteId,
+                url: '/admin/console/' + deleteId,
                 data: {
                     "_token": "{{ csrf_token() }}",
                 },
