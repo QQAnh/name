@@ -50,7 +50,7 @@ class HomepageController extends Controller
 
     public function getListSmartPhone(){
         $category = Category::all();
-        $product = Product::where('category',1)->get();
+        $product = Product::where('category',1)->where('status',1)->get();
         return view('client.listClient.smartphone')->with('category',$category)->with('product',$product);
     }
 
