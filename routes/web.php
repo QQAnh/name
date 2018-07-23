@@ -78,6 +78,31 @@ Route::get('/admin/category',function (){
     $category = \Illuminate\Support\Facades\DB::table('categories')->get();
     return view('admin.listAdmin.Category.listCategory')->with('category',$category);
 });
+Route::post('/admin/category',function (\Illuminate\Http\Request $request){
+    $validator = Validator::make($request->all(), [
+        'title' => 'bail|required|unique:products|max:50',
+        'thumbnail' => 'required'
+    ]);
+    if ($validator->fails()) {
+        return redirect('/admin/category/create')
+            ->withErrors($validator->errors())
+            ->withInput();
+    }
+    $product = new \App\Category();
+    $product->title = $request->get("title");
+    $product->image_url = $request->get("avatar2");
+    $product->category = 1;
+    $product->save();
+    return redirect('/admin/category');
+});
+Route::get('/admin/category/create',function (){
+    return view('admin.listAdmin.Category.formCategory')->with([
+        "product"=> new \App\Category(),
+        "action"=>"/admin/category",
+        "method"=>"POST"
+    ]);
+});
+
 
 
 

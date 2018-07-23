@@ -14,7 +14,7 @@
                     <ul class="nav nav-tabs " style="border-bottom: none">
                         <li class="col-md-9">List Category</li>
                         <li>
-                            <a href="###########" style="padding: 0; color: white">Create new category</a>
+                            <a href="/admin/category/create" style="padding: 0; color: white">Create new category</a>
                         </li>
                     </ul>
                 </div>
