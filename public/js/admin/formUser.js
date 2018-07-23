@@ -5,7 +5,7 @@ var CLOUDINARY_UPLOAD_PRESET = 'DemoImg';
 var imgPreview = '';
 
 $(document).ready(function () {
-    var fileUpload = document.getElementById('avatar');
+    var fileUpload = document.getElementById('thumbnail');
     fileUpload.addEventListener('change', function (event) {
         var file = event.target.files[0];
         var formData = new FormData();
