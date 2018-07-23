@@ -90,7 +90,8 @@ Route::get('/console','Client\HomepageController@getListConsole');
 //    return view('admin.listAdmin.SmartPhone.listProductPhone')->with('category',$category);
 //});
 Route::get('hello',function (){
-   return "hello";
+    $category = \Illuminate\Support\Facades\DB::table('categories')->get();
+   return view('admin.listAdmin.Category.listProductPhone')->with('category',$category);
 });
 
 
