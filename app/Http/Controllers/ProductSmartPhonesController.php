@@ -94,29 +94,11 @@ class ProductSmartPhonesController extends Controller
     }
     public function deleteSmartPhone($id)
     {
-        $product = Product::find($id);
-        if ($product==null){
-            return redirect("errors");
-        }
-        return view('admin.listAdmin.Product.SmartPhone.formSmartPhoneDelete')->with([
-            "product"=> $product,
-            "action"=>"/admin/smartphone/" . $product->id,
-            "method"=>"PUT"
-        ]) ;
+
     }
     public function updateStatus(Request $request, $id)
     {
-        $product = Product::find($id);
-        if ($product == null) {
-            return view("errors.404");
-        }
-        $product->status = 2;
-        $product->save();
-        if ($request->get("isAjax")) {
-            return $product;
-        } else {
-            return redirect("/admin/smartphone");
-        }
+
     }
 
     /**
