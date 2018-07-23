@@ -38,12 +38,15 @@
                             <tbody >
                             @foreach($order as $item )
                                 <tr id="{{$item->id}}">
-                                    <td>{{$item->UserId}}</td>
-                                    <td>{{$item->nameReceiver}} </td>
-                                    <td>{{$item->phoneReceiver}}</td>
-                                    <td>{{$item->addressReceiver}}</td>
-                                    <td>{{$item->note}}</td>
-                                    <td>{{$item->totalMoney}} </td>
+
+                                    {{--<td>{{$item->UserId}}</td>--}}
+                                    {{--<td>{{$item->nameReceiver}} </td>--}}
+                                    {{--<td>{{$item->phoneReceiver}}</td>--}}
+                                    {{--<td>{{$item->addressReceiver}}</td>--}}
+                                    {{--<td>{{$item->note}}</td>--}}
+                                    {{--<td>{{$item->totalMoney}} </td>--}}
+                                    <td>{{$item->orderId}}</td>
+
                                 </tr>
                             @endforeach
                             </tbody>
