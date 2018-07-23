@@ -117,7 +117,7 @@
 
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/admin/smartphone"><i class="fa fa-edit fa-fw"></i>List Category</a>
+                                <a href="/admin/category"><i class="fa fa-edit fa-fw"></i>List Category</a>
                             </li>
                         </ul>
                     </li>

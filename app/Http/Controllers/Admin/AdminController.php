@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\UserMember;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -52,7 +53,7 @@ class AdminController extends Controller
 //}
     public function listCategory()
     {
-        $category = DB::table('categories')->get();
+        $category = Category::all();
         return view('admin.listAdmin.Category.listCategory')->with('category',$category);
 
 
