@@ -44,37 +44,10 @@ Route::get('/admin', function (){
 Route::resource('user','AccountsController');
 Route::resource('/order','OrderController');
 Route::get('/orderDetail/{id}',function ($id){
-    \Illuminate\Support\Facades\Log::info('Yoloooo');
+    \Illuminate\Support\Facades\Log::info('Yoloooo' . $id);
     $order_detail = \App\OrderDetail::find($id);
     return view('admin.listAdmin.Order.ListOrderDetail')->with('order_detail',$order_detail);
 });
-
-Route::get('/orderDetailHallo/{id}',function ($id){
-    $order_detail = \App\OrderDetail::find($id);
-    return $order_detail;
-});
-
-Route::get('/orderDetailHello/{id}',function ($id){
-    \Illuminate\Support\Facades\Log::info('Yoloooo');
-    return 'Yolo';
-});
-
-Route::get('/orderDetailHillo/{id}',function ($id){
-    return view('admin.listAdmin.Order.ListOrderDetail')->with('order_detail',new \App\OrderDetail());
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
