@@ -24,13 +24,13 @@
                         <table class="table table-striped table-bordered table-hover">
                             <thead>
                             <tr>
-                                <th>UserId</th>
-                                <th>Name Receiver</th>
-                                <th>Phone Receiver</th>
-                                <th>Address Receiver</th>
-                                <th>Note</th>
-                                <th>Total Money (VND)</th>
-                                <th> Hành Động </th>
+                                {{--<th>UserId</th>--}}
+                                {{--<th>Name Receiver</th>--}}
+                                {{--<th>Phone Receiver</th>--}}
+                                {{--<th>Address Receiver</th>--}}
+                                {{--<th>Note</th>--}}
+                                {{--<th>Total Money (VND)</th>--}}
+                                {{--<th> Hành Động </th>--}}
 
                             </tr>
                             </thead>
@@ -42,9 +42,6 @@
 
                                     <td>{{$item->orderId}} </td>
 
-                                    <td>
-                                        <a href="#" id="putUser" class="fa fa-edit"> Xem chi tiết</a> <p> </p>
-                                    </td>
 
                                 </tr>
                             @endforeach
