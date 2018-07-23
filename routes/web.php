@@ -44,6 +44,9 @@ Route::get('/admin', function (){
 Route::resource('user','AccountsController');
 Route::resource('/order','OrderController');
 Route::resource('/admin/smartphone','ProductSmartPhonesController');
+Route::get('/admin/smartphone/{id}/delete','ProductSmartPhonesController@deleteSmartPhone');
+Route::put('/admin/smartphone/{id}','ProductSmartPhonesController@updateStatus');
+
 
 
 

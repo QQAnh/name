@@ -1,5 +1,5 @@
 @extends('admin.layoutAdmin.master')
-@section('title', 'Delete Category')
+@section('title', 'Delete SmartPhone')
 @section('style')
     <link href="{{asset('css/layout.css')}}" rel="stylesheet">
 @endsection
@@ -7,7 +7,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Delete Category</h1>
+            <h1 class="page-header">Delete SmartPhone</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -15,7 +15,7 @@
         <div class="col-lg-8">
             <div class="panel panel-primary">
                 <div class="panel-heading text-capitalize">
-                    Xoá category
+                    Xoá Sản Phẩm
                 </div>
                 <div class="panel-body">
                     <form action="{{$action}}" id="add-user" method="POST" enctype="multipart/form-data" class="form-horizontal">

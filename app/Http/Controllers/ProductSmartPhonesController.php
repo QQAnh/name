@@ -16,9 +16,10 @@ class ProductSmartPhonesController extends Controller
      */
     public function index()
     {
-        $product = DB::table('products')
+        $product1 = DB::table('products')
             ->where('category','=',1)
             ->get();
+        $product = $product1->where('status',1);
 //        return response()->json($product, 200);
         return view('admin.listAdmin.Product.SmartPhone.listProductPhone')->with('product',$product);
     }
@@ -91,6 +92,33 @@ class ProductSmartPhonesController extends Controller
             "method"=>"PUT"
         ]) ;
     }
+    public function deleteSmartPhone($id)
+    {
+        $product = Product::find($id);
+        if ($product==null){
+            return redirect("errors");
+        }
+        return view('admin.listAdmin.Product.SmartPhone.formSmartPhoneDelete')->with([
+            "product"=> $product,
+            "action"=>"/admin/smartphone/" . $product->id,
+            "method"=>"PUT"
+        ]) ;
+    }
+    public function updateStatus(Request $request, $id)
+    {
+        $product = Product::find($id);
+        if ($product == null) {
+            return view("errors.404");
+        }
+        $product->status = 2;
+        $product->save();
+        if ($request->get("isAjax")) {
+            return $product;
+        } else {
+            return redirect("/admin/smartphone");
+        }
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -123,9 +151,7 @@ class ProductSmartPhonesController extends Controller
      */
     public function destroy($id)
     {
-        $user = Product::find($id);
-        $user->delete();
-        return redirect('/admin/smartphone');
+
     }
 
 
