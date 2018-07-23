@@ -47,14 +47,13 @@ Route::resource('user','AccountsController');
 Route::resource('/order','OrderController');
 Route::get('/orderDetail/{id}',function ($id){
     $order_detail = OrderDetail::find($id);
-    $productName = \App\Product::where('id',$order_detail->get('productId'))->get();
-    $productPrice = \App\Product::where('id',$order_detail->get('productId'))->get();
-    $quatity = OrderDetail::where('id',$id)->get();
+//    $productName = \App\Product::where('id',$order_detail->get('productId'))->get();
+//    $productPrice = \App\Product::where('id',$order_detail->get('productId'))->get();
 
     return view('admin.listAdmin.Order.ListOrderDetail')->with('order_detail',$order_detail)
-        ->with('productName',$productName)
-        ->with('productPrice',$productPrice)
-        ->with('quatity',$quatity);
+//        ->with('productName',$productName)
+//        ->with('productPrice',$productPrice);
+    ;
 });
 
 
