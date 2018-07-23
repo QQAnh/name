@@ -18,35 +18,6 @@
                     Xoá category
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-bordered table-hover">
-                        <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Image</th>
-                            <th>Title</th>
-
-                        </tr>
-                        </thead>
-                        <tbody id="demo-get">
-                        </tbody>
-                        <tbody >
-                        <tr id="{{$item->id}}">
-                            <td>{{$item->id}}</td>
-                            <th class="col-md-2">
-                                {{--<div class="card"--}}
-                                {{--style="background-image: url('{{$item->image_url}}'); background-size: cover; width: 60px; height: 60px;">--}}
-                                {{--</div>--}}
-                                <img src="{{$item->image_url}}" style=" with:60px; height: 60px" class="img-thumbnail">
-                            </th>
-                            <td id="title-{{$item->title}}">{{$item->title}}</td>
-                            {{--<td>{{$item->description}} </td>--}}
-                            {{--<td>{{$item->price}}</td>--}}
-
-                        </tr>
-                        </tbody>
-                    </table>
-
-
                     <form action="{{$action}}" id="add-user" method="POST" enctype="multipart/form-data" class="form-horizontal">
                         @if($method == "PUT")
                             <input name="_method" type="hidden" value="PUT">
@@ -55,7 +26,7 @@
 
                         <div class="form-group row">
                             <div class="col-md-4">
-                                <label> </label>
+                                <label>  </label>
                             </div>
                             <div class="col-md-8">
                                 <button type="submit" class="btn btn-default">Submit</button>
