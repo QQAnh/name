@@ -24,20 +24,19 @@
                         <table class="table table-striped table-bordered table-hover">
                             <thead>
                             <tr>
-                                {{--<th>UserId</th>--}}
-                                {{--<th>Name Receiver</th>--}}
-                                {{--<th>Phone Receiver</th>--}}
-                                {{--<th>Address Receiver</th>--}}
-                                {{--<th>Note</th>--}}
-                                {{--<th>Total Money (VND)</th>--}}
-                                {{--<th> Hành Động </th>--}}
+                                <th>ID</th>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
 
                             </tr>
                             </thead>
                             <tbody id="demo-get">
                             </tbody>
                             <tbody >
-                            {{$order_detail->orderId}}
+                              <tr>
+                                  <th>{{$order_detail->orderId}}</th>
+                              </tr>
                             </tbody>
                         </table>
                     </div>

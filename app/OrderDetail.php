@@ -15,6 +15,7 @@ class OrderDetail extends Model
 
     }
 
+
 //    public function __construct($oldCart)
 //    {
 //        if ($oldCart) {

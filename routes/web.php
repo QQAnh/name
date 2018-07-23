@@ -46,8 +46,8 @@ Route::get('/admin', function (){
 Route::resource('user','AccountsController');
 Route::resource('/order','OrderController');
 Route::get('/orderDetail/{id}',function ($id){
-    \Illuminate\Support\Facades\Log::info('Yoloooo' . $id);
     $order_detail = OrderDetail::find($id);
+
     return view('admin.listAdmin.Order.ListOrderDetail')->with('order_detail',$order_detail);
 });
 
