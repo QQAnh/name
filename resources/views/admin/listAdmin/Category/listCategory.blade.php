@@ -27,7 +27,7 @@
                             <tbody id="demo-get">
                             </tbody>
                             <tbody >
-                            @foreach($category as $item)
+                            @foreach($product as $item)
                                 <tr id="{{$item->id}}">
                                     <td>{{$item->id}}</td>
                                     <th class="col-md-2">
