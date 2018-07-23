@@ -92,9 +92,9 @@
         var deleteId = '';
         $('.btn-delete').click(function () {
             deleteId = $(this).attr("id").replace('delete-', '');
-            var title = $('#title-' + deleteId).text();
-            title = "Sản phẩm với tên là: '" + title + "'";
-            $('#modalContent').text(title);
+            var name = $('#title-' + deleteId).text();
+            name = "Sản phẩm với tên là: '" + name + "'";
+            $('#modalContent').text(name);
             $('#exampleModal').modal('show');
         });
 
