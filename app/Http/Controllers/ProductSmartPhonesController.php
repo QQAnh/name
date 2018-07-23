@@ -230,8 +230,10 @@ class ProductSmartPhonesController extends Controller
 
     public function showLaptop()
     {
-        $product =Product::where('category','=',2)
+        $product1 =Product::where('category','=',2)
             ->get();
+        $product = $product1->where('status','=',1);
+
 //        return response()->json($product, 200);
         return view('admin.listAdmin.Product.Laptop.listProductLaptop')->with('product',$product);
     }
@@ -310,8 +312,10 @@ class ProductSmartPhonesController extends Controller
 
     public function showConsole()
     {
-        $product =Product::where('category','=',4)
+        $product1 =Product::where('category','=',4)
             ->get();
+        $product = $product1->where('status','=',1);
+
 //        return response()->json($product, 200);
         return view('admin.listAdmin.Product.Console.listProductConsole')->with('product',$product);
     }
