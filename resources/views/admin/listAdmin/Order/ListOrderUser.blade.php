@@ -36,7 +36,7 @@
                             <tbody id="demo-get">
                             </tbody>
                             <tbody >
-                            @foreach($order as $item)
+                            @foreach($order as $item )
                                 <tr id="{{$item->id}}">
                                     <td>{{$item->UserId}}</td>
                                     <td>{{$item->nameReceiver}} </td>
