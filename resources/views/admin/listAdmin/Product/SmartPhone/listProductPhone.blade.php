@@ -50,7 +50,7 @@
                                     <td>
                                         <a href="/admin/smartphone/{{$item->id}}/edit" id="putUser" class="fa fa-edit"> Edit</a> <p> </p>
 
-                                        <a href="#" id="delete-{{$item->id}}" class="fa fa-trash btn-delete"> Delete</a>
+                                        <a href="/admin/smartphone/destroy/{{$item->id}}" id="delete-{{$item->id}}" class="fa fa-trash btn-delete"> Delete</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -120,7 +120,7 @@
 
         // });
 
-        var listDeleteButton = document.getElementsByClassName('btn-delete');
+        var listDeleteButton = document.getElementsByClassName('fa fa-trash btn-delete');
         for (var i= 0; i<listDeleteButton;i++){
             if (confirm("Xoa")){
                 var param = '_token={{csrf_token()}}';
