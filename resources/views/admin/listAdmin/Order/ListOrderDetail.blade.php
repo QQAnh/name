@@ -37,14 +37,7 @@
                             <tbody id="demo-get">
                             </tbody>
                             <tbody >
-                            @foreach($order_detail as $item )
-                                <tr id="{{$item->id}}">
-
-                                    <td>{{$item->orderId}} </td>
-
-
-                                </tr>
-                            @endforeach
+                            {{$order_detail->orderId}}
                             </tbody>
                         </table>
                     </div>

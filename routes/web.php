@@ -44,7 +44,7 @@ Route::get('/admin', function (){
 Route::resource('user','AccountsController');
 Route::resource('/order','OrderController');
 Route::get('/orderDetail/{id}',function ($id){
-    $order_detail = DB::table('order_detail')->where('orderId' , $id)->get();
+    $order_detail = \App\OrderDetail::find($id);
     return view('admin.listAdmin.Order.ListOrderDetail')->with('order_detail',$order_detail);
 });
 
