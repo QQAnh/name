@@ -17,7 +17,7 @@ class ProductConsoleController extends Controller
             ->where('category','=',4)
             ->get();
 //        return response()->json($product, 200);
-        return view('admin.listAdmin.Product.Console.listProductConsole')->with('product',$product);
+        return view('admin.listAdmin.Product.Smartphone.listProductSmartPhone')->with('product',$product);
     }
 
     /**
