@@ -55,6 +55,7 @@ Route::get('/orderDetailHallo/{id}',function ($id){
 });
 
 Route::get('/orderDetailHello/{id}',function ($id){
+    \Illuminate\Support\Facades\Log::info('Yoloooo');
     return 'Yolo';
 });
 
