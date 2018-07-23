@@ -25,8 +25,6 @@ class OrderController extends Controller
 //            ->select('orders.*','order_details.*','user_members.*','products.*')
 //            ->get();
         $order = Order::all();
-        $order_details = OrderDetail::where('orderId',$order->get('id'))->get();
-
 //        $id = $order->get('id');
 //        $order = DB::table('order_details')->where('id',$id)->get();
 //        $product = $order->get('productId');
