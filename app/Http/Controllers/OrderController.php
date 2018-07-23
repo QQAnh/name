@@ -34,10 +34,8 @@ class OrderController extends Controller
         return view('admin.listAdmin.Order.ListOrderUser')->with('order', $order);
     }
     public function index2($id){
-//        $order = Order::find($id)->get('id');
-        $order_detail = OrderDetail::where('orderId' ,'=' , $id)->get();
 
-        return view('admin.listAdmin.Order.ListOrderDetail')->with('order_detail',$order_detail);
+
     }
 
     /**
