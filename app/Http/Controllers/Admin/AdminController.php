@@ -53,7 +53,7 @@ class AdminController extends Controller
 //}
     public function listCategory()
     {
-        $category = Category::all();
+        $category = \Illuminate\Support\Facades\DB::table('categories')->get();
         return view('admin.listAdmin.Category.listCategory')->with('category',$category);
 
 

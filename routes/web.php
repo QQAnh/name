@@ -74,7 +74,13 @@ Route::put('/admin/console/{id}','ProductSmartPhonesController@updateConsole');
 
 
 
+Route::get('/admin/category','Admin\AdminController@listCategory');
 
+
+
+
+
+//////////////////     CLIENT      //////////////////////
 
 
 Route::get('/smartphone','Client\HomepageController@getListSmartPhone');
@@ -89,10 +95,6 @@ Route::get('/console','Client\HomepageController@getListConsole');
 //    $category = Category::all();
 //    return view('admin.listAdmin.SmartPhone.listProductPhone')->with('category',$category);
 //});
-Route::get('/admin/category',function (){
-    $category = \Illuminate\Support\Facades\DB::table('categories')->get();
-   return view('admin.listAdmin.Category.listProductPhone')->with('category',$category);
-});
 
 
 
