@@ -6,6 +6,7 @@ use App\Order;
 use App\OrderDetail;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class OrderApiController extends Controller
@@ -41,7 +42,7 @@ class OrderApiController extends Controller
     {
         //
         $jsonRequest = $request->json()->all();
-
+        Log::debug($jsonRequest);
         try{
 //            DB::beginTransaction();
             $order = new Order();
