@@ -42,7 +42,7 @@ class OrderApiController extends Controller
     {
         //
         $jsonRequest = $request->json()->all();
-        Log::debug($jsonRequest);
+        Log::info($jsonRequest);
 //        try{
 ////            DB::beginTransaction();
 //            $order = new Order();
