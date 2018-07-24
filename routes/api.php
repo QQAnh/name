@@ -34,4 +34,9 @@ Route::get('/product/category/{id}','Endpoint\ProductsController@getByCategory')
 
 Route::resource('/order','OrderApiController');
 
-Route::resource('/orderDetail','OrderDetailController');
+//Route::resource('/orderDetail','OrderDetailController');
+Route::get('/orderDetail', function (){
+    $entries = \App\OrderDetail::all();
+    return response()->json($entries, 200);
+
+});
