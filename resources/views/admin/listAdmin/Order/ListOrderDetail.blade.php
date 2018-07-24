@@ -33,11 +33,13 @@
                             <tbody id="demo-get">
                             </tbody>
                             <tbody >
+                            @foreach($order_detail as $key => $item)
                               <tr>
-                                  <th>{{$order_detail->orderId}}</th>
-                                  <th>{{$order_detail->productId}}</th>
-                                  <th>{{$order_detail->quantity}}</th>
+                                  <th>{{$item->orderId}}</th>
+                                  <th>{{$item->productId}}</th>
+                                  <th>{{$item->quantity}}</th>
                               </tr>
+                               @endforeach
                             </tbody>
                         </table>
                     </div>
