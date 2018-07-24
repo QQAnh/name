@@ -128,7 +128,7 @@
                                 {{--<a href="#"><i class="fa fa-edit fa-fw"></i>List Order Detail</a>--}}
                             {{--</li>--}}
                             <li>
-                                <a href="/order"><i class="fa fa-edit fa-fw"></i>List Order Detail</a>
+                                <a href="/order"><i class="fa fa-edit fa-fw"></i>List Order </a>
                             </li>
                         </ul>
                     </li>
