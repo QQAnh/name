@@ -43,30 +43,30 @@ class OrderApiController extends Controller
         //
         $jsonRequest = $request->json()->all();
         Log::info($jsonRequest);
-//        try{
-////            DB::beginTransaction();
-//            $order = new Order();
-//            $order->UserId = $jsonRequest['userId'];
-//            $order->nameBuyes = $jsonRequest['nameBuyer'];
-//            $order->phoneBuyes = $jsonRequest['phoneBuyer'];
-//            $order->nameReceiver = $jsonRequest['name'];
-//            $order->phoneReceiver = $jsonRequest['phone'];
-//            $order->addressReceiver = $jsonRequest['address'];
-//            $order->totalMoney = $jsonRequest['total'];
-//            $order->note = $jsonRequest['note'];
-//            $order->save();
-//            $list_order_details = $jsonRequest['list_Order'];
-//            for ($i=0; $i < count($list_order_details); $i++){
-//                $order_detail = new OrderDetail();
-//                $order_detail -> orderId = $order->id;
-//                $order_detail -> productId = $list_order_details[$i]['ProductId'];
-//                $order_detail -> quantity = $list_order_details[$i]['Quantity'];
-//                $order_detail -> save();
-//            }
-////            DB::commit();
-//        }catch (EXCEPTION $exception) {
-////            DB::rollback();
-//        }
+        try{
+//            DB::beginTransaction();
+            $order = new Order();
+            $order->UserId = $jsonRequest['userId'];
+            $order->nameBuyes = $jsonRequest['nameBuyer'];
+            $order->phoneBuyes = $jsonRequest['phoneBuyer'];
+            $order->nameReceiver = $jsonRequest['name'];
+            $order->phoneReceiver = $jsonRequest['phone'];
+            $order->addressReceiver = $jsonRequest['address'];
+            $order->totalMoney = $jsonRequest['total'];
+            $order->note = $jsonRequest['note'];
+            $order->save();
+            $list_order_details = $jsonRequest['list_Order'];
+            for ($i=0; $i < count($list_order_details); $i++){
+                $order_detail = new OrderDetail();
+                $order_detail -> orderId = $order->id;
+                $order_detail -> productId = $list_order_details[$i]['ProductId'];
+                $order_detail -> quantity = $list_order_details[$i]['Quantity'];
+                $order_detail -> save();
+            }
+//            DB::commit();
+        }catch (EXCEPTION $exception) {
+//            DB::rollback();
+        }
         return $jsonRequest;
     }
 
