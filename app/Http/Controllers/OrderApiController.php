@@ -39,6 +39,7 @@ class OrderApiController extends Controller
      */
     public function store(Request $request)
     {
+        //
         $jsonRequest = $request->json()->all();
 
         try{
@@ -54,10 +55,11 @@ class OrderApiController extends Controller
             $order->note = $jsonRequest['note'];
             $order->save();
             $list_order_details = $jsonRequest['list_Order'];
+
             for ($i=0; $i < count($list_order_details); $i++){
                 $order_detail = new OrderDetail();
                 $order_detail -> orderId = $order->id;
-                $order_detail -> productId = $list_order_details[$i]['ProductId'];
+                $order_detail -> productId = $list_order_details[$i]['ProductID'];
                 $order_detail -> quantity = $list_order_details[$i]['Quantity'];
                 $order_detail -> save();
             }
