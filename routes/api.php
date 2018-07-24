@@ -55,7 +55,6 @@ Route::post('/order',function ( Request $request){
         $order->note = $jsonRequest['note'];
         $order->save();
         $list_order_details = $jsonRequest['list_Order'];
-
         for ($i=0; $i < count($list_order_details); $i++){
             $order_detail = new OrderDetail();
             $order_detail -> orderId = $order->id;
