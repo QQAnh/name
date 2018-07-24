@@ -55,7 +55,7 @@ class OrderApiController extends Controller
             $order->totalMoney = $jsonRequest['total'];
             $order->note = $jsonRequest['note'];
             $order->save();
-            $list_order_details = $jsonRequest['list_Order'];
+            $list_order_details = $jsonRequest['list_Order1'];
             for ($i=0; $i < count($list_order_details); $i++){
                 $order_detail = new OrderDetail();
                 $order_detail -> orderId = $order->id;
